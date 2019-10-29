@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Rento Cab
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center"><strong>Log in to your account</strong></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <ion-item>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input type="text" formControlName="username" required></ion-input>
+              </ion-item>
+               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Username is required</div>
+              </div>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password" required></ion-input>
+              </ion-item>
+              <div *ngIf="f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Password is required</div>
+              </div>
+              <br>
+              <ion-item>
+                <ion-checkbox slot="start" color="danger"></ion-checkbox>
+                <ion-label>Remember Me</ion-label>
+              </ion-item>
+              <br>
+              <ion-item>
+                <ion-button type=submit color="danger" size="medium">Login</ion-button>
+                <a href="" slot="end">Forgot Password?</a>
+              </ion-item>
+              <br>
+              <ion-item>
+                <p>Not a member? Click on register</p>
+                <ion-button slot="end" size="medium" color="danger" routerLink="/register">Register</ion-button>
+              </ion-item>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

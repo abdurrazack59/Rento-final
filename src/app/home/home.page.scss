@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Roboto&display=swap');
+
+ion-title{
+    font-size: 2rem;
+    font-family: 'Courgette';
+}
+.titles{
+    font-size: 32px;
+}
+p{
+    color: #737373;
+    margin: 0px;
+    padding: 0px;
+}
+h4{
+    margin: 0px;
+    padding: 0px;
+}
+strong{
+    font-size: 28px;
+}
+.why-rento img{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+   
+}
+
+@media screen and (max-width:786px){
+
+}

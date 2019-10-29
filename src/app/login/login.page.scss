@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Roboto&display=swap');
+
+ion-title{
+    font-size: 3rem;
+    font-family: 'Courgette';
+}
+ion-col{
+    margin-top: 25vh;
+}
+ion-card-title{
+    font-size: 30px;
+}
+
+.d-flex{
+    display: flex;
+    flex-direction: row;
+}
+.ml-auto{
+    margin-left: auto;
+}

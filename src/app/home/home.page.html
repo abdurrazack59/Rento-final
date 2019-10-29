@@ -1,0 +1,175 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Rento Cab
+    </ion-title>
+    <ion-button *ngIf="!authService.loggedIn()" slot="end" size="small" color="light" routerLink="/login">Login
+    </ion-button>
+    <ion-button *ngIf="!authService.loggedIn()" slot="end" size="small" color="danger" routerLink="/register">Register
+    </ion-button>
+    <ion-button *ngIf="authService.loggedIn()" slot="end" size="small" color="light" (click)="logout()">Logout
+    </ion-button>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center"><strong>One cab many destination</strong><br>
+              AC cabs for local city travel
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="stacked">PICKUP</ion-label>
+              <ion-input placeholder="Enter pickup location"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">DROP</ion-label>
+              <ion-input placeholder="Enter drop location"></ion-input>
+            </ion-item>
+            <br>
+            <ion-button expand="block" color="danger">Search Cabs</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <div class="ion-padding">
+      <strong class="titles" class="ion-text-center">A car for every occasion..</strong>
+      <p>Rento offers city taxis, inter-city cabs, and local cabs at hourly packages</p>
+    </div>
+    <ion-row>
+      <ion-col size="12" size-sm>
+        <ion-card routerLink="">
+          <img src="assets/images/card1.jpg" />
+          <ion-card-header>
+            <ion-card-title>CITY TAXI</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            The perfect way to get through your everyday travel needs.
+            City taxis are available 24/7 and you can book and travel in an instant.
+            With rides starting from as low as Rs. 6/km, you can choose from a wide range of options!
+            You can also opt to do your bit for the environment with Rento Share!
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-sm>
+        <ion-card routerLink="">
+          <img src="assets/images/card2.jpg" />
+          <ion-card-header>
+            <ion-card-title>RENTALS</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            With Rento Rentals you get a cab at your disposal.
+            So be it a day long business meeting, a shopping trip with your friends or just a day out in a new city,
+            we have you covered. Packages start at 1 hour and can be extended upto 12 hours! So you can have a
+            uninterupted ride leading to your destination.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-sm>
+        <ion-card routerLink="">
+          <img src="assets/images/card3.jpg" />
+          <ion-card-header>
+            <ion-card-title>OUTSTATION</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Ride out of town at affordable one-way and round-trip fares with Rento’s intercity travel service.
+            Choose from a range of AC cabs driven by top partners, available in 1 hour or book upto 7 days in advance.
+            We have you covered across India with presence in 90+ cities.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <div class="ion-padding">
+      <strong class="titles" class="ion-text-center">Why ride with Rento?</strong>
+      <p>The best way to travel to your destination</p>
+    </div>
+    <br>
+    <ion-row>
+      <ion-col size="4" class="why-rento">
+        <img src="../../assets/images/img1.jpg" alt="">
+      </ion-col>
+      <ion-col size="8">
+        <h4>Cabs For Every Pocket</h4>
+        <p>From Sedans and SUVs to Luxury cars for special occasions,
+          we have cabs to suit every pocket</p>
+      </ion-col>
+    </ion-row>
+    <br>
+    <ion-row>
+        <ion-col size="4" class="why-rento">
+          <img src="../../assets/images/img2.jpg" alt="">
+        </ion-col>
+        <ion-col size="8">
+          <h4>Secure and Safer Rides</h4>
+          <p>Verified drivers, an emergency alert button, 
+            and live ride tracking are some of the features that we have in
+             place to ensure you a safe travel experience.</p>
+        </ion-col>
+      </ion-row>
+      <br>
+    <ion-row>
+        <ion-col size="4" class="why-rento">
+          <img src="../../assets/images/img3.jpg" alt="">
+        </ion-col>
+        <ion-col size="8">
+          <h4>Ola Select</h4>
+          <p>A membership program with Ola that lets you ride a Prime Sedan at Mini fares,
+             book cabs without peak pricing and has zero wait time</p>
+        </ion-col>
+      </ion-row>
+      <br>
+    <ion-row>
+        <ion-col size="4" class="why-rento">
+          <img src="../../assets/images/img4.jpg" alt="">
+        </ion-col>
+        <ion-col size="8">
+          <h4>In Cab Entertainment</h4>
+          <p>Play music, watch videos and a lot more with Ola Play!
+             Also stay connected even if you are travelling through poor network areas with our free wifi facility.</p>
+        </ion-col>
+      </ion-row>
+      <br>
+    <ion-row>
+        <ion-col size="4" class="why-rento">
+          <img src="../../assets/images/img5.jpg" alt="">
+        </ion-col>
+        <ion-col size="8">
+          <h4>Share and Express</h4>
+          <p>To travel with the lowest fares choose Ola Share.
+             For a faster travel experience we have Share Express on some fixed routes with zero deviations.
+             Choose your ride and zoom away!</p>
+        </ion-col>
+      </ion-row>
+      <br>
+    <ion-row>
+        <ion-col size="4" class="why-rento">
+          <img src="../../assets/images/img6.jpg" alt="">
+        </ion-col>
+        <ion-col size="8">
+          <h4>Cashless Rides</h4>
+          <p>Now go cashless and travel easy. 
+            Simply recharge your Ola money or add your credit/debit card to enjoy hassle free payments.
+            </p>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+
+</ion-content>
