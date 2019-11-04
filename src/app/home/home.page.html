@@ -1,21 +1,128 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      Rento Cab
-    </ion-title>
-    <ion-button *ngIf="!authService.loggedIn()" slot="end" size="small" color="light" routerLink="/login">Login
-    </ion-button>
-    <ion-button *ngIf="!authService.loggedIn()" slot="end" size="small" color="danger" routerLink="/register">Register
-    </ion-button>
-    <ion-button *ngIf="authService.loggedIn()" slot="end" size="small" color="light" (click)="logout()">Logout
-    </ion-button>
+<ion-app>
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-item routerLink="/userprofile" router-direction="forward">
+          <ion-avatar slot="start">
+            <img [src]="[userImg]">
+          </ion-avatar>
+          <ion-label>
+            <h3><b>My Profile</b></h3>
+            <p>{{ mobileNumber }}</p>
+          </ion-label>
+          <ion-icon name="arrow-dropright"></ion-icon>
+        </ion-item>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="card" slot="start"></ion-icon>
+          <ion-label><a routerLink="">Rento Pass</a></ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="card" slot="start"></ion-icon>
+          <ion-label><a routerLink="">Share Pass</a> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="time" slot="start"></ion-icon>
+          <ion-label><a routerLink="">Your Rides</a> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="key" slot="start"></ion-icon>
+          <ion-label><a routerLink="">Self Drive Booking</a> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="help-circle-outline" slot="start"></ion-icon>
+          <ion-label><a routerLink="">Know Your Rides</a> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="filing" slot="start"></ion-icon>
+          <ion-label><a routerLink="">Rate Card</a> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="cash" slot="start"></ion-icon>
+          <ion-label><a routerLink="">Rento Money</a> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="wallet" slot="start"></ion-icon>
+          <ion-label><a routerLink="">Payments</a> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="happy" slot="start"></ion-icon>
+          <ion-label><a routerLink="">Support</a> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-label><a routerLink="">About</a> </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
 
-  </ion-toolbar>
+  <div class="ion-page" main>
+    <header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <div class="header-segment">
+          <a routerLink="/daily" routerLinkActive="active-link">Daily</a>
+          <a routerLink="/rentals" routerLinkActive="active-link">Rentals</a>
+          <a routerLink="/outstation" routerLinkActive="active-link">Outstation</a>
+          <a routerLink="/drive" routerLinkActive="active-link">Drive</a>
+        </div>
 
-</ion-header>
+        <ion-icon name="notifications" slot="end" class="notification-icon"></ion-icon>
+      </ion-toolbar>
+    </header>
+    <ion-content>
+      
+      <div #mapElement class="map"></div>
+
+    </ion-content>
+
+    <ion-segment scrollable>
+      <ion-segment-button checked>
+        <a routerLink=""><img src="../../assets/images/ola-micro-active.svg" style="height: 50px;width: 50px;"
+            alt=""></a>
+      </ion-segment-button>
+      <ion-segment-button checked>
+        <a routerLink=""><img src="../../assets/images/ola-prime-play-active.svg" style="height: 50px;width: 50px;"
+            alt=""></a>
+      </ion-segment-button>
+      <ion-segment-button checked>
+        <a routerLink=""><img src="../../assets/images/ola-prime-sedan-active.svg" style="height: 50px;width: 50px;"
+            alt=""></a>
+      </ion-segment-button>
+      <ion-segment-button checked>
+        <a routerLink=""><img src="../../assets/images/ola-prime-suv-active.svg" style="height: 50px;width: 50px;"
+            alt=""></a>
+      </ion-segment-button>
+      <ion-segment-button checked>
+        <a routerLink=""><img src="../../assets/images/ola-lux-active.svg" style="height: 50px;width: 50px;" alt=""></a>
+      </ion-segment-button>
+      <ion-segment-button checked>
+        <a routerLink=""><img src="../../assets/images/ola-kaali-peeli-active.svg" style="height: 50px;width: 50px;"
+            alt=""></a>
+      </ion-segment-button>
+    </ion-segment>
+
+    <div class="d-flex ride-btn">
+      <div class="flex-fill">
+        <a routerLink="/ridelater">RIDE LATER</a>
+      </div>
+      <span class="vertical-line"></span>
+      <div class="flex-fill">
+        <a routerLink="/ridelater">RIDE NOW</a>
+      </div>
+    </div>
+
+  </div>
+
+</ion-app>
+
+<!-- </ion-header>
 
 <ion-content>
   <ion-grid>
@@ -172,4 +279,12 @@
       </ion-row>
   </ion-grid>
 
-</ion-content>
+  <ion-grid>
+    <div class="ion-padding">
+      <strong class="titles" class="ion-text-center">Meet Our Awesome Fleet</strong>
+      <p>The best way to travel to your destination</p>
+    </div>
+    <br>
+
+</ion-grid>
+</ion-content> -->

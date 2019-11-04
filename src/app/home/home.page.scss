@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette|Roboto&display=swap');
 
-ion-title{
-    font-size: 2rem;
-    font-family: 'Courgette';
-}
 .titles{
     font-size: 32px;
 }
+a {
+    all: unset;
+}
+
 p{
     color: #737373;
     margin: 0px;
@@ -26,7 +26,36 @@ strong{
     background-size: cover;
    
 }
+.header-segment{
+    text-align: center;
+}
+.header-segment a{
+    padding: 0px 15px;
+}
+.notification-icon{
+    font-size: 23px;
+}
+.ride-btn {
+   background: black;
+   color: whitesmoke;
+   padding: 12px;
+   text-align: center;
+}
+.vertical-line{
+    display: inline-block;
+    border-left: 1px solid #ccc;
+    margin: -12px 10px;
+}
+.map{
+    height: 100%;
+}
 
-@media screen and (max-width:786px){
-
+@media screen and (max-width:424px){
+    .header-segment a{
+        padding: 0px 7px;
+        font-size: 15px;
+    }
+    .notification-icon{
+        font-size: 20px;
+    }
 }
