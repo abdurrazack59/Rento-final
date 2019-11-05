@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Your Account</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item routerLink="/accountdetails" router-direction="forward">
+    <ion-avatar slot="start">
+      <img src="../../../assets/svg icons/user.svg">
+    </ion-avatar>
+    <ion-label>
+      <b>{{ userName }}</b>
+      <p>{{ mobileNumber }}</p>
+    </ion-label>
+    <ion-icon name="arrow-dropright"></ion-icon>
+  </ion-item>
+  <hr>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="../../../assets/svg icons/lock.svg">
+    </ion-avatar>
+    <ion-label>
+      <b>Safety and Privacy</b>
+      <p>Manage account security and privacy</p>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label class="label">2-Step verification</ion-label>
+    <ion-icon name="arrow-dropright"></ion-icon>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">Emergency contacts</ion-label>
+    <ion-icon name="arrow-dropright"></ion-icon>
+  </ion-item>
+  <hr>
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="../../../assets/svg icons/gear.svg">
+    </ion-avatar>
+    <ion-label>
+      <b>Ride Settings</b>
+      <p>Manage your ride preferences</p>
+    </ion-label>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label class="label" >Rento Wi-fi</ion-label>
+    <ion-icon name="arrow-dropright"></ion-icon>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label class="label">Ride Insurance</ion-label>
+    <ion-icon name="arrow-dropright"></ion-icon>
+  </ion-item>
+  <ion-item>
+    <ion-label class="label">Donations</ion-label>
+    <ion-icon name="arrow-dropright"></ion-icon>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="../../../assets/svg icons/logout.svg">
+    </ion-avatar>
+    <ion-label (click)="logout()" >Log out</ion-label>
+  </ion-item>
+</ion-content>

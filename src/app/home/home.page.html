@@ -2,7 +2,7 @@
   <ion-menu side="start">
     <ion-header>
       <ion-toolbar translucent>
-        <ion-item routerLink="/userprofile" router-direction="forward">
+        <ion-item routerLink="/user" router-direction="back">
           <ion-avatar slot="start">
             <img [src]="[userImg]">
           </ion-avatar>
@@ -18,15 +18,15 @@
       <ion-list>
         <ion-item>
           <ion-icon name="card" slot="start"></ion-icon>
-          <ion-label><a routerLink="">Rento Pass</a></ion-label>
+          <ion-label><a routerLink="/rentopass">Rento Pass</a></ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="card" slot="start"></ion-icon>
-          <ion-label><a routerLink="">Share Pass</a> </ion-label>
+          <ion-label><a routerLink="/sharepass">Share Pass</a> </ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="time" slot="start"></ion-icon>
-          <ion-label><a routerLink="">Your Rides</a> </ion-label>
+          <ion-label><a routerLink="/yourrides">Your Rides</a> </ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="key" slot="start"></ion-icon>
@@ -38,23 +38,23 @@
         </ion-item>
         <ion-item>
           <ion-icon name="filing" slot="start"></ion-icon>
-          <ion-label><a routerLink="">Rate Card</a> </ion-label>
+          <ion-label><a routerLink="/ratecard">Rate Card</a> </ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="cash" slot="start"></ion-icon>
-          <ion-label><a routerLink="">Rento Money</a> </ion-label>
+          <ion-label><a routerLink="/rentomoney">Rento Money</a> </ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="wallet" slot="start"></ion-icon>
-          <ion-label><a routerLink="">Payments</a> </ion-label>
+          <ion-label><a routerLink="/payments">Payments</a> </ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="happy" slot="start"></ion-icon>
-          <ion-label><a routerLink="">Support</a> </ion-label>
+          <ion-label><a routerLink="/support">Support</a> </ion-label>
         </ion-item>
         <ion-item>
           <ion-icon name="information-circle-outline" slot="start"></ion-icon>
-          <ion-label><a routerLink="">About</a> </ion-label>
+          <ion-label><a routerLink="/about">About</a> </ion-label>
         </ion-item>
       </ion-list>
     </ion-content>
@@ -77,8 +77,15 @@
       </ion-toolbar>
     </header>
     <ion-content>
-      
-      <div #mapElement class="map"></div>
+        <ion-item>
+            <ion-label position="stacked">PICKUP</ion-label>
+            <ion-input placeholder="Enter pickup location"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">DROP</ion-label>
+            <ion-input placeholder="Enter drop location"></ion-input>
+          </ion-item>
+      <div #mapElement class="map">GOOGLE MAP APPEARS HERE..</div>
 
     </ion-content>
 

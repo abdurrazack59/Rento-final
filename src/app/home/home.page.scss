@@ -1,61 +1,63 @@
-@import url('https://fonts.googleapis.com/css?family=Courgette|Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Courgette|Roboto&display=swap");
 
-.titles{
-    font-size: 32px;
+.titles {
+  font-size: 32px;
 }
 a {
-    all: unset;
+  all: unset;
 }
 
-p{
-    color: #737373;
-    margin: 0px;
-    padding: 0px;
+p {
+  color: #737373;
+  margin: 0px;
+  padding: 0px;
 }
-h4{
-    margin: 0px;
-    padding: 0px;
+h4 {
+  margin: 0px;
+  padding: 0px;
 }
-strong{
-    font-size: 28px;
+strong {
+  font-size: 28px;
 }
-.why-rento img{
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-   
+.why-rento img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
 }
-.header-segment{
-    text-align: center;
+.header-segment {
+  text-align: center;
 }
-.header-segment a{
-    padding: 0px 15px;
+.header-segment a {
+  padding: 0px 15px;
 }
-.notification-icon{
-    font-size: 23px;
+.notification-icon {
+  font-size: 23px;
 }
 .ride-btn {
-   background: black;
-   color: whitesmoke;
-   padding: 12px;
-   text-align: center;
+  background: black;
+  color: whitesmoke;
+  padding: 12px;
+  text-align: center;
 }
-.vertical-line{
-    display: inline-block;
-    border-left: 1px solid #ccc;
-    margin: -12px 10px;
+.vertical-line {
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  margin: -12px 10px;
 }
-.map{
-    height: 100%;
+.map {
+  font-size: 3rem;
+  text-align: center;
+  transform: rotate(-50deg);
+  margin-top: 30vh;
 }
 
-@media screen and (max-width:424px){
-    .header-segment a{
-        padding: 0px 7px;
-        font-size: 15px;
-    }
-    .notification-icon{
-        font-size: 20px;
-    }
+@media screen and (max-width: 424px) {
+  .header-segment a {
+    padding: 0px 7px;
+    font-size: 15px;
+  }
+  .notification-icon {
+    font-size: 20px;
+  }
 }
