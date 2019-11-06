@@ -12,14 +12,10 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    // canActivate: [AuthGuard],
+     // canActivate: [AuthGuard],
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
-  {
-    path: 'list',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  },
+
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'admin', loadChildren: './admin/admin.module#AdminPageModule' },
   { path: 'driver', loadChildren: './driver/driver.module#DriverPageModule' },
@@ -28,8 +24,8 @@ const routes: Routes = [
   { path: 'user', loadChildren: './userprofile/user/user.module#UserPageModule' },
   { path: 'about', loadChildren: './userprofile/about/about.module#AboutPageModule' },
   { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
-  { path: 'ridelater', loadChildren: './ridelater/ridelater.module#RidelaterPageModule' }
-];
+  { path: 'ridelater', loadChildren: './ridelater/ridelater.module#RidelaterPageModule' },
+  ];
 
 @NgModule({
   imports: [

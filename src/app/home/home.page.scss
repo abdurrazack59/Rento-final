@@ -51,6 +51,10 @@ strong {
   transform: rotate(-50deg);
   margin-top: 30vh;
 }
+iframe{
+  width: 100vw;
+  height: 100vh;
+}
 
 @media screen and (max-width: 424px) {
   .header-segment a {

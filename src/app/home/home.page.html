@@ -77,15 +77,19 @@
       </ion-toolbar>
     </header>
     <ion-content>
-        <ion-item>
-            <ion-label position="stacked">PICKUP</ion-label>
-            <ion-input placeholder="Enter pickup location"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">DROP</ion-label>
-            <ion-input placeholder="Enter drop location"></ion-input>
-          </ion-item>
-      <div #mapElement class="map">GOOGLE MAP APPEARS HERE..</div>
+      <ion-item>
+        <ion-label position="stacked">PICKUP</ion-label>
+        <ion-input placeholder="Enter pickup location"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">DROP</ion-label>
+        <ion-input placeholder="Enter drop location"></ion-input>
+      </ion-item>
+
+      <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.1968637432797!2d77.58319391557842!3d13.023132117267263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17b5d96fe3b3%3A0xed2f26ef86e89578!2sPROACSCENT%20Business%20Solutions%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1573020012755!5m2!1sen!2sin"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+     
 
     </ion-content>
 
@@ -121,7 +125,7 @@
       </div>
       <span class="vertical-line"></span>
       <div class="flex-fill">
-        <a routerLink="/ridelater">RIDE NOW</a>
+        <a routerLink="/ridenow">RIDE NOW</a>
       </div>
     </div>
 
