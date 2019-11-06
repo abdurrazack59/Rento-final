@@ -19,6 +19,7 @@ export class AuthService {
       .pipe(map((res: any) => {
         if (res.ok) {
           sessionStorage.setItem('token', res.headers.get('Authorization'));
+          sessionStorage.setItem("role",res.headers.get("role"));
           // console.log(sessionStorage.getItem('token'));
         }
       }));

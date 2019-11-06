@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder, Validators,  } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
 
@@ -25,18 +25,20 @@ export class LoginPage implements OnInit {
 
   }
 
-    get f() {
-      return this.loginForm.controls;
-    }
-    onSubmit() {
-      this.authService.login(this.f.username.value, this.f.password.value)
+  get f() {
+    return this.loginForm.controls;
+  }
+  onSubmit() {
+    this.authService.login(this.f.username.value, this.f.password.value)
       .subscribe(
         loginData => {
 
-          console.log('this is my token' + sessionStorage.getItem('token'));
-          this.router.navigate(['/home']);
-
-
+          if (sessionStorage.getItem("role") == "ROLE_USER") {
+            this.router.navigate(['/home']);
+          }
+          else if (sessionStorage.getItem("role") == "ROLE_ADMIN") {
+            this.router.navigate(['/admin'])
+          }
         },
         error => {
           console.log('Error ' + error);

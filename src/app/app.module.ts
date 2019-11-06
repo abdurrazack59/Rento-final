@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TokenInterceptorService } from './services/token-interceptor.service';
+// import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [AppComponent, ],
@@ -26,11 +26,11 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptorService,
-      multi: true
-    }
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: TokenInterceptorService,
+    //   multi: true
+    // }
   ],
   bootstrap: [AppComponent]
 })

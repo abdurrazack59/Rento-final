@@ -25,7 +25,8 @@ export class RegisterPage implements OnInit {
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['', Validators.required],
+      roles:this.formBuilder.array([{name:"user"}])
     },
       {
         validator: MustMatch('password', 'confirmPassword')
