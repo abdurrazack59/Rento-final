@@ -12,7 +12,7 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col size-md="6" offset-md="3">
+      <ion-col size-md="8" offset-md="2">
         <ion-card>
           <ion-card-header>
             <ion-card-title class="ion-text-center"><strong>Log in to your account</strong></ion-card-title>
@@ -23,7 +23,7 @@
                 <ion-label position="floating">Username</ion-label>
                 <ion-input type="text" formControlName="username" required></ion-input>
               </ion-item>
-               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                 <div *ngIf="f.username.errors.required">Username is required</div>
               </div>
               <ion-item>
@@ -39,15 +39,13 @@
                 <ion-label>Remember Me</ion-label>
               </ion-item>
               <br>
-              <ion-item>
-                <ion-button type=submit color="danger" size="medium">Login</ion-button>
-                <a href="" slot="end">Forgot Password?</a>
-              </ion-item>
+              <ion-button type=submit color="danger" expand="block">Login</ion-button>
               <br>
-              <ion-item>
-                <p>Not a member? Click on register</p>
-                <ion-button slot="end" size="medium" color="danger" routerLink="/register">Register</ion-button>
-              </ion-item>
+              <div class="text-center"><a href="" slot="end">Forgot Password?</a></div>
+              <br>
+              <p class="ion-text-center">Not a member? Click on register</p>
+              <br>
+              <ion-button slot="end" expand="block" color="primary" routerLink="/register">Register</ion-button>
             </form>
           </ion-card-content>
         </ion-card>
