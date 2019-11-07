@@ -26,7 +26,7 @@ export class RegisterPage implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      roles:this.formBuilder.array([{name:"user"}])
+      roles: this.formBuilder.array([{name: 'user'}])
     },
       {
         validator: MustMatch('password', 'confirmPassword')
@@ -41,8 +41,9 @@ export class RegisterPage implements OnInit {
       return;
     }
     this.registerApi.addNewUser(form).subscribe(res => {
+      console.log(res);
+      this.router.navigate(['/login']);
     });
-    this.router.navigate(['/login']);
   }
 
 }
