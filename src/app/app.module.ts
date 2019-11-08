@@ -13,7 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 // import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
-  declarations: [AppComponent, ],
+  declarations: [AppComponent,  ],
   entryComponents: [],
   imports: [
     HttpClientModule,

@@ -33,15 +33,17 @@ export class LoginPage implements OnInit {
       .subscribe(
         loginData => {
 
-          if (sessionStorage.getItem("role") == "ROLE_USER") {
+          if (sessionStorage.getItem('role') === 'ROLE_USER') {
             this.router.navigate(['/home']);
+          } else if (sessionStorage.getItem('role') === 'ROLE_ADMIN') {
+            this.router.navigate(['/admin']);
+          } else if (sessionStorage.getItem('role') === 'ROLE_DRIVER') {
+            this.router.navigate(['/driver']);
           }
-          else if (sessionStorage.getItem("role") == "ROLE_ADMIN") {
-            this.router.navigate(['/admin'])
-          }
+          console.log('Logged in successfully..');
         },
-        error => {
-          console.log('Error ' + error);
+        Error => {
+          console.log('Error ' + Error.prototype);
         }
       );
   }

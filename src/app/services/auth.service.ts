@@ -28,9 +28,8 @@ export class AuthService {
   loggedIn() {
     return sessionStorage.getItem('token');
   }
-
-  public logout() {
-    sessionStorage.removeItem('token');
-  }
+logout() {
+  sessionStorage.removeItem('Token');
+}
 }
 

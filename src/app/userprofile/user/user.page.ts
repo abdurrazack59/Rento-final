@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { RegisterPage } from 'src/app/register/register.page';
 
 @Component({
   selector: 'app-user',
@@ -8,10 +9,8 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./user.page.scss'],
 })
 export class UserPage implements OnInit {
-  userName = 'abdur razack';
   mobileNumber = 9876543210;
-
-  constructor(private router: Router, private alertController: AlertController) { }
+  constructor(private router: Router, private alertController: AlertController, private register: RegisterPage) { }
 
   ngOnInit() {
   }
@@ -24,7 +23,7 @@ export class UserPage implements OnInit {
         {
           text: 'Cancel',
           role: 'cancel',
-          handler: (blah) => {
+          handler: (res) => {
 
           }
         },

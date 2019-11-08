@@ -41,7 +41,7 @@ export class RegisterPage implements OnInit {
       return;
     }
     this.registerApi.addNewUser(form).subscribe(res => {
-      console.log(res);
+      console.log(`${this.f.firstName.value} ${this.f.lastName.value} registered successfully..` );
       this.router.navigate(['/login']);
     });
   }
