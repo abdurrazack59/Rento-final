@@ -1,7 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { RegisterPage } from 'src/app/register/register.page';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +9,7 @@ import { RegisterPage } from 'src/app/register/register.page';
 })
 export class UserPage implements OnInit {
   mobileNumber = 9876543210;
-  constructor(private router: Router, private alertController: AlertController, private register: RegisterPage) { }
+  constructor(private router: Router, private alertController: AlertController,) { }
 
   ngOnInit() {
   }
