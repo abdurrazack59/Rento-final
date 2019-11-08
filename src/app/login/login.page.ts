@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
+import { RegisterApiService } from '../services/register-api.service';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,10 @@ import { AuthService } from '../services/auth.service';
 
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
-  constructor(private router: Router, private formBuilder: FormBuilder, private http: HttpClientModule, private authService: AuthService) {
-
-  }
+  constructor(private router: Router, private formBuilder: FormBuilder,
+              private http: HttpClientModule, private authService: AuthService,
+              private registerApiService: RegisterApiService,
+  ) { }
 
   ngOnInit() {
     this.authService.logout();
@@ -41,6 +43,11 @@ export class LoginPage implements OnInit {
             this.router.navigate(['/driver']);
           }
           console.log('Logged in successfully..');
+          this.registerApiService.getUserDetails()
+            .subscribe((data) => {
+            console.log(data);
+
+          });
         },
         Error => {
           console.log('Error ' + Error.prototype);

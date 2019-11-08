@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -19,6 +20,7 @@ export class AuthService {
       .pipe(map((res: any) => {
         if (res.ok) {
           sessionStorage.setItem('token', res.headers.get('Authorization'));
+          sessionStorage.setItem('email', username);
           sessionStorage.setItem('role', res.headers.get('role'));
           // console.log(sessionStorage.getItem('token'));
         }
@@ -29,7 +31,10 @@ export class AuthService {
     return sessionStorage.getItem('token');
   }
 logout() {
-  sessionStorage.removeItem('Token');
+  sessionStorage.removeItem('token');
+  sessionStorage.removeItem('email');
+  sessionStorage.removeItem('role');
 }
+
 }
 

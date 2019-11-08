@@ -1,6 +1,8 @@
 import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { RegisterApiService } from 'src/app/services/register-api.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user',
@@ -8,10 +10,16 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./user.page.scss'],
 })
 export class UserPage implements OnInit {
+  userName = '';
   mobileNumber = 9876543210;
-  constructor(private router: Router, private alertController: AlertController,) { }
+  constructor(private router: Router, private alertController: AlertController,
+              private registerApiService: RegisterApiService, private authService: AuthService) { }
 
   ngOnInit() {
+    // this.registerApiService.getUserDetails()
+    // .subscribe(data => {
+    //  console.log(data);
+    // });
   }
 
   async logout() {
@@ -30,9 +38,9 @@ export class UserPage implements OnInit {
           text: 'OK',
           cssClass: 'buttonCss',
           handler: () => {
-            sessionStorage.removeItem('token');
-            this.router.navigate(['/login']);
-            console.log('Logout Successful.');
+             this.authService.logout();
+             this.router.navigate(['/login']);
+             console.log('Logout Successful.');
           }
         }
       ]
