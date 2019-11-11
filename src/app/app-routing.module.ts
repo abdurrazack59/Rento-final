@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './login/auth.guard';
+import { GoogleMapComponent } from './google-map/google-map.component';
 
 
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'about', loadChildren: './userprofile/about/about.module#AboutPageModule' },
   { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
   { path: 'ridelater', loadChildren: './ridelater/ridelater.module#RidelaterPageModule' },
+  { path: 'google-map', component: GoogleMapComponent },
   ];
 
 @NgModule({

@@ -11,13 +11,15 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col size-md="8" offset-md="2">
+      <ion-col size-md="12">
         <ion-card>
           <ion-card-header>
-            <ion-card-title class="ion-text-center"><strong>Log in to your account</strong></ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="ion-padding">
+                <h1 class="text-center">Login to your account</h1>
+              </div>
               <ion-item>
                 <ion-label position="floating">Username</ion-label>
                 <ion-input type="text" formControlName="username" required></ion-input>
@@ -38,13 +40,13 @@
                 <ion-label>Remember Me</ion-label>
               </ion-item>
               <br>
-              <ion-button type=submit color="danger" expand="block">Login</ion-button>
+              <ion-button (click)="onSubmit()"  color="danger" expand="block" shape="round">Login</ion-button>
               <br>
               <div class="text-center"><a href="" slot="end">Forgot Password?</a></div>
               <br>
               <p class="ion-text-center">Not a member? Click on register</p>
               <br>
-              <ion-button slot="end" expand="block" color="primary" routerLink="/register">Register</ion-button>
+              <ion-button slot="end" expand="block" color="primary" shape="round" routerLink="/register">Register</ion-button>
             </form>
           </ion-card-content>
         </ion-card>

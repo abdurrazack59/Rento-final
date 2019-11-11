@@ -11,63 +11,71 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col size-md="8" offset-md="2" >
+      <ion-col size-md="12">
         <ion-card>
           <ion-card-header>
-            <ion-card-title class="ion-text-center"><strong>Register for free account</strong></ion-card-title>
           </ion-card-header>
           <ion-card-content>
 
-          <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)"> 
-            <ion-item >
-              <ion-label position="floating">First Name</ion-label>
-              <ion-input type="text" formControlName ="firstName" [ngClass]="{ 'is-invalid':submitted && f.firstName.errors }"></ion-input>
-            </ion-item>
-            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-              <div *ngIf=" f.firstName.errors.required">First Name is required</div>
-            </div>
-            <ion-item>
-              <ion-label position="floating">Last Name</ion-label>
-              <ion-input type="text" formControlName="lastName" [ngClass]="{ 'is-invalid':submitted && f.lastName.errors }"></ion-input>
-            </ion-item>
-            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-              <div *ngIf=" f.lastName.errors.required">Last Name is required</div>
-            </div>
-            <ion-item>
-              <ion-label position="floating">Email</ion-label>
-              <ion-input type="email" formControlName="email" [ngClass]="{ 'is-invalid':submitted && f.email.errors }"></ion-input>
-            </ion-item>
-            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf=" f.email.errors.required">Email is required</div>
-              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-            </div>
-            <ion-item>
-              <ion-label position="floating">Password</ion-label>
-              <ion-input type="password" formControlName = "password" [ngClass]="{ 'is-invalid':submitted && f.password.errors }"></ion-input>
-            </ion-item>
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.password.errors.required">Password is required</div>
-              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-            </div>
-            <ion-item>
-              <ion-label position="floating">Confirm password</ion-label>
-              <ion-input type="password" formControlName = "confirmPassword" [ngClass]="{ 'is-invalid':submitted && f.confirmPassword.errors }"></ion-input>
-            </ion-item>
-            <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-              <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-              <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
-            </div>
-            <ion-item>
-              <ion-checkbox slot="start" color="danger" ></ion-checkbox>
-              <ion-label>I accept terms and conditions</ion-label>
-            </ion-item>
+            <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)">
+              <div class="ion-padding">
+                <h1 class="text-center">Register for free account</h1>
+              </div>
+              <ion-item>
+                <ion-label position="floating">First Name</ion-label>
+                <ion-input type="text" formControlName="firstName"
+                  [ngClass]="{ 'is-invalid':submitted && f.firstName.errors }"></ion-input>
+              </ion-item>
+              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf=" f.firstName.errors.required">First Name is required</div>
+              </div>
+              <ion-item>
+                <ion-label position="floating">Last Name</ion-label>
+                <ion-input type="text" formControlName="lastName"
+                  [ngClass]="{ 'is-invalid':submitted && f.lastName.errors }"></ion-input>
+              </ion-item>
+              <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf=" f.lastName.errors.required">Last Name is required</div>
+              </div>
+              <ion-item>
+                <ion-label position="floating">Email</ion-label>
+                <ion-input type="email" formControlName="email"
+                  [ngClass]="{ 'is-invalid':submitted && f.email.errors }"></ion-input>
+              </ion-item>
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf=" f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+              </div>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input type="password" formControlName="password"
+                  [ngClass]="{ 'is-invalid':submitted && f.password.errors }"></ion-input>
+              </ion-item>
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+              </div>
+              <ion-item>
+                <ion-label position="floating">Confirm password</ion-label>
+                <ion-input type="password" formControlName="confirmPassword"
+                  [ngClass]="{ 'is-invalid':submitted && f.confirmPassword.errors }"></ion-input>
+              </ion-item>
+              <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+                <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+              </div>
+              <ion-item>
+                <ion-checkbox slot="start" color="danger"></ion-checkbox>
+                <ion-label>I accept terms and conditions</ion-label>
+              </ion-item>
               <br>
-              <ion-button type="submit" [disabled]="registerForm.invalid" color="primary" expand="block">Register</ion-button>
+              <ion-button class="register-btn" shape="round" (click)="onFormSubmit()" [disabled]="registerForm.invalid" color="primary"
+                expand="full">Register</ion-button>
               <br>
-              <p class="ion-text-center">Already have an account?</p> 
+              <p class="ion-text-center">Already have an account?</p>
               <br>
-              <ion-button color="danger" expand="block" routerLink="/login">Login</ion-button>
-          </form>
+              <ion-button color="danger" expand="full" shape="round" routerLink="/login">Login</ion-button>
+            </form>
           </ion-card-content>
         </ion-card>
       </ion-col>
