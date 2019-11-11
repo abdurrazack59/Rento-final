@@ -14,7 +14,13 @@ const routes: Routes = [
   {
     path: 'home',
      // canActivate: [AuthGuard],
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
+    
+
+    // children:[
+    //   {path:'user',loadChildren:()=> import('./userprofile/user/user.module').then(m=>m.UserPageModule)}
+    // ]
+
   },
 
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },

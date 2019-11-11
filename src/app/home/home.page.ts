@@ -1,8 +1,8 @@
 import {  Component,  OnInit} from '@angular/core';
 // import { Geolocation } from '@ionic-native/geolocation/ngx';
-
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { RegisterApiService } from '../services/register-api.service';
 
 
 @Component({
@@ -11,13 +11,22 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  mobileNumber = 9876543210;
+  data:any={};
+  userName: 'ajdn';
+  mobileNumber:2837;
+  
+  
   userImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCEzGoZ6NCvbjg4hJlLL_0TLB61J8R2Xi09hoiSpGxXvVdTRoB';
 
-  constructor(private router: Router, private authService: AuthService, ) { }
+  constructor(private router: Router, private authService: AuthService,private registerApiService: RegisterApiService ) { }
 
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
+    this.registerApiService.getUserDetails()
+    .subscribe(data => {
+      this.data=data.body;
+     console.log(data);
+    });
   }
 
 

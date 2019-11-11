@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
@@ -22,8 +22,10 @@ export class RegisterApiService {
 
   }
   getUserDetails(): Observable<any> {
-    const param = new HttpParams().set('email', sessionStorage.getItem('email'));
-    return this.httpClient.get(environment.baseURL + '/user/getUser', {params: param} );
+    let header= new HttpHeaders().set('Authorization',sessionStorage.getItem('token'));
+    let param = new HttpParams().set('email', sessionStorage.getItem('currentUser'));
+    return this.httpClient.get(environment.baseURL + '/user/getUser',{
+      params:param,headers:header, observe: 'response' } );
   }
 
 }
