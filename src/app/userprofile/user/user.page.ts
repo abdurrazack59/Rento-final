@@ -10,13 +10,19 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./user.page.scss'],
 })
 export class UserPage implements OnInit {
-  // userName = '';
-  // mobileNumber = 9876543210;
+  data: any = {};
+   userName = '';
+   mobileNumber = 9876543210;
   constructor(private router: Router, private alertController: AlertController,
               private registerApiService: RegisterApiService, private authService: AuthService) { }
 
   ngOnInit() {
-   
+    this.registerApiService.getUserDetails()
+    .subscribe(data => {
+      this.data = data.body;
+      this.userName = data.body.firstName + ' ' + data.body.lastName;
+    });
+
   }
 
   async logout() {

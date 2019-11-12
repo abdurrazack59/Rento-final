@@ -42,6 +42,11 @@
                 <ion-input type="email" formControlName="email"
                   [ngClass]="{ 'is-invalid':submitted && f.email.errors }"></ion-input>
               </ion-item>
+              <ion-item>
+                <ion-label position="floating">Mobile Number</ion-label>
+                <ion-input type="text" (keypress)="isInputNumber($event)" formControlName="mobileNumber"
+                  [ngClass]="{ 'is-invalid':submitted && f.mobileNumber.errors }"></ion-input>
+              </ion-item>
               <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                 <div *ngIf=" f.email.errors.required">Email is required</div>
                 <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
@@ -69,7 +74,7 @@
                 <ion-label>I accept terms and conditions</ion-label>
               </ion-item>
               <br>
-              <ion-button class="register-btn" shape="round" (click)="onFormSubmit()" [disabled]="registerForm.invalid" color="primary"
+              <ion-button class="register-btn" shape="round" (click)="onFormSubmit(registerForm.value)" [disabled]="registerForm.invalid" color="primary"
                 expand="full">Register</ion-button>
               <br>
               <p class="ion-text-center">Already have an account?</p>

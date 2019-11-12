@@ -22,10 +22,10 @@ export class RegisterApiService {
 
   }
   getUserDetails(): Observable<any> {
-    let header= new HttpHeaders().set('Authorization',sessionStorage.getItem('token'));
-    let param = new HttpParams().set('email', sessionStorage.getItem('currentUser'));
-    return this.httpClient.get(environment.baseURL + '/user/getUser',{
-      params:param,headers:header, observe: 'response' } );
+    const header = new HttpHeaders().set('Authorization', sessionStorage.getItem('token'));
+    const param = new HttpParams().set('email', sessionStorage.getItem('currentUser'));
+    return this.httpClient.get(environment.baseURL + '/user/getUser', {
+      params: param, headers: header, observe: 'response' } );
   }
 
 }
