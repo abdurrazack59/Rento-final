@@ -7,12 +7,12 @@
 <ion-content>
   <form [formGroup]="directionForm" (ngSubmit)="calculateAndDisplayRoute(directionForm.value)">
     <ion-item>
-      <ion-label position="floating"></ion-label>
-      <ion-input formControlName="pickup"></ion-input>
+      <ion-label position="stacked">PICKUP</ion-label>
+      <ion-input formControlName="pickup" placeholder="Enter pickup location"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Destination</ion-label>
-      <ion-input formControlName="drop"></ion-input>
+      <ion-label position="stacked">DROP</ion-label>
+      <ion-input formControlName="drop" placeholder="Enter drop location"></ion-input>
     </ion-item>
     <ion-button expand="full" type="submit" [disabled]="directionForm.invalid">Get Direction</ion-button>
   </form>

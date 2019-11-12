@@ -15,7 +15,7 @@ export class GooglemapPage implements OnInit, AfterViewInit {
   @ViewChild('mapElement', { static: true }) mapNativeElement: ElementRef;
   directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
-  
+
 
   constructor(private geolocation: Geolocation, private fb: FormBuilder) { }
 
