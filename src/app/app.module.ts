@@ -12,11 +12,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpParams} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
-import { GoogleMapComponent } from './google-map/google-map.component';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 // import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
-  declarations: [AppComponent, GoogleMapComponent,  ],
+  declarations: [AppComponent,   ],
   entryComponents: [],
   imports: [
     HttpClientModule,
@@ -27,6 +27,7 @@ import { GoogleMapComponent } from './google-map/google-map.component';
     AppRoutingModule
   ],
   providers: [
+    Geolocation,
     StatusBar,
     HttpParams,
     AuthService,

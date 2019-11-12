@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './login/auth.guard';
-import { GoogleMapComponent } from './google-map/google-map.component';
-
 
 
 const routes: Routes = [
@@ -15,7 +13,7 @@ const routes: Routes = [
     path: 'home',
      // canActivate: [AuthGuard],
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-    
+
 
     // children:[
     //   {path:'user',loadChildren:()=> import('./userprofile/user/user.module').then(m=>m.UserPageModule)}
@@ -32,7 +30,7 @@ const routes: Routes = [
   { path: 'about', loadChildren: './userprofile/about/about.module#AboutPageModule' },
   { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
   { path: 'ridelater', loadChildren: './ridelater/ridelater.module#RidelaterPageModule' },
-  { path: 'google-map', component: GoogleMapComponent },
+  { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
   ];
 
 @NgModule({
