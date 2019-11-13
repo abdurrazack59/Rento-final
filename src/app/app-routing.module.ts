@@ -30,7 +30,8 @@ const routes: Routes = [
   { path: 'about', loadChildren: './userprofile/about/about.module#AboutPageModule' },
   { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
   { path: 'ridelater', loadChildren: './ridelater/ridelater.module#RidelaterPageModule' },
-  { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
+  { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },  { path: 'geolocation', loadChildren: './geolocation/geolocation.module#GeolocationPageModule' },
+
   ];
 
 @NgModule({
