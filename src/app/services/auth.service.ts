@@ -32,7 +32,7 @@ export class AuthService {
   }
 logout() {
   sessionStorage.removeItem('token');
-  sessionStorage.removeItem('email');
+  sessionStorage.removeItem('currentUser');
   sessionStorage.removeItem('role');
 }
 

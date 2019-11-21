@@ -12,8 +12,8 @@ import { RegisterApiService } from '../services/register-api.service';
 })
 export class HomePage implements OnInit {
   data: any = {};
-  userName: any = '';
-  mobileNumber: any = 9876543210;
+  userName = '';
+  mobileNumber = '';
 
   userImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCEzGoZ6NCvbjg4hJlLL_0TLB61J8R2Xi09hoiSpGxXvVdTRoB';
 
@@ -25,12 +25,14 @@ export class HomePage implements OnInit {
     .subscribe(data => {
       this.data = data.body;
       this.userName = data.body.firstName + ' ' + data.body.lastName;
+      this.mobileNumber = data.body.mobileNumber;
     });
   }
 
 
   logout() {
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
     console.log('Logout Successful.');
   }

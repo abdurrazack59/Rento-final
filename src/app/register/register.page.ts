@@ -24,7 +24,6 @@ export class RegisterPage implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      // tslint:disable-next-line: max-line-length
       mobileNumber: ['', [Validators.required, Validators.minLength(10)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],

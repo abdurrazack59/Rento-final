@@ -1,44 +1,99 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-declare var google;
 
 @Component({
   selector: 'app-googlemap',
   templateUrl: './googlemap.page.html',
   styleUrls: ['./googlemap.page.scss'],
 })
-export class GooglemapPage implements OnInit, AfterViewInit {
+export class GooglemapPage implements OnInit {
 
   directionForm: FormGroup;
 
-  @ViewChild('mapElement', { static: false }) gmap: ElementRef;
+  @ViewChild('mapElement', { static: true }) gmapElement: any;
 
   map: google.maps.Map;
 
-  latitude: any;
-  longitude: any;
+  isTracking = false;
 
-  coordinates = new google.maps.LatLng(this.latitude, this.longitude);
-  mapOptions: google.maps.MapOptions = {
-    center: this.coordinates,
-    zoom: 8,
-  };
+  currentLat: any;
+  currentLong: any;
 
-  marker = new google.maps.Marker({
-    position: this.coordinates,
-    map: this.map,
-  });
+  marker: google.maps.Marker;
+  directionsService: any;
+  directionsDisplay: any;
 
-  // tslint:disable-next-line: new-parens
-  directionsService = new google.maps.DirectionsService;
-  // tslint:disable-next-line: new-parens
-  directionsDisplay = new google.maps.DirectionsRenderer;
-
-
-  constructor(private geolocation: Geolocation, private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {
     this.createDirectionForm();
   }
+
+  ngOnInit() {
+    const mapProp = {
+      center: new google.maps.LatLng(18.5793, 73.8143),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+  }
+
+  findMe() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.showPosition(position);
+      });
+    } else {
+      alert('Geolocation is not supported by this browser.');
+    }
+  }
+
+  showPosition(position) {
+    this.currentLat = position.coords.latitude;
+    this.currentLong = position.coords.longitude;
+
+    const location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    this.map.panTo(location);
+
+    if (!this.marker) {
+      this.marker = new google.maps.Marker({
+        position: location,
+        map: this.map,
+        title: 'Got you!'
+      });
+    } else {
+      this.marker.setPosition(location);
+    }
+  }
+
+  trackMe() {
+    if (navigator.geolocation) {
+      this.isTracking = true;
+      navigator.geolocation.watchPosition((position) => {
+        this.showTrackingPosition(position);
+      });
+    } else {
+      alert('Geolocation is not supported by this browser.');
+    }
+  }
+
+  showTrackingPosition(position) {
+    console.log(`tracking postion:  ${position.coords.latitude} - ${position.coords.longitude}`);
+    this.currentLat = position.coords.latitude;
+    this.currentLong = position.coords.longitude;
+
+    const location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    this.map.panTo(location);
+
+    if (!this.marker) {
+      this.marker = new google.maps.Marker({
+        position: location,
+        map: this.map,
+        title: 'Got you!'
+      });
+    } else {
+      this.marker.setPosition(location);
+    }
+  }
+
 
   createDirectionForm() {
     this.directionForm = this.fb.group({
@@ -46,40 +101,6 @@ export class GooglemapPage implements OnInit, AfterViewInit {
       drop: ['', Validators.required]
     });
   }
-
-
-  ngOnInit() {
-
-  }
-
-  ngAfterViewInit(): void {
-
-
-    this.geolocation.getCurrentPosition().then((resp) => {
-      this.latitude = resp.coords.latitude;
-      this.longitude = resp.coords.longitude;
-      const infoWindow = new google.maps.InfoWindow;
-      const pos = {
-        lat: this.latitude,
-        lng: this.longitude
-      };
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      infoWindow.open(this.map);
-      this.map.setCenter(pos);
-    }).catch((error) => {
-      console.log('Error getting location', error);
-    });
-    this.mapInitializer();
-  }
-
-
-  mapInitializer() {
-    this.map = new google.maps.Map(this.gmap.nativeElement,
-      this.mapOptions);
-    this.marker.setMap(this.map);
-  }
-
 
   calculateAndDisplayRoute(formValues) {
     const that = this;
