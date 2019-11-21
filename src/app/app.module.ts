@@ -16,7 +16,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 // import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
-  declarations: [AppComponent,   ],
+  declarations: [AppComponent,    ],
   entryComponents: [],
   imports: [
     HttpClientModule,

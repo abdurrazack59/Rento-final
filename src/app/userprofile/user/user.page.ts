@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class UserPage implements OnInit {
   data: any = {};
    userName = '';
-   mobileNumber = 9876543210;
+   mobileNumber = '';
   constructor(private router: Router, private alertController: AlertController,
               private registerApiService: RegisterApiService, private authService: AuthService) { }
 
@@ -21,6 +21,7 @@ export class UserPage implements OnInit {
     .subscribe(data => {
       this.data = data.body;
       this.userName = data.body.firstName + ' ' + data.body.lastName;
+      this.mobileNumber = data.body.mobileNumber;
     });
 
   }
