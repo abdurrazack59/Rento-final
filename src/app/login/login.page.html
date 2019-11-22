@@ -8,49 +8,48 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col size-md="12">
-        <ion-card>
-          <ion-card-header>
-          </ion-card-header>
-          <ion-card-content>
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-              <div class="ion-padding">
-                <h1 class="text-center">Login to your account</h1>
-              </div>
-              <ion-item>
-                <ion-label position="floating">Username</ion-label>
-                <ion-input type="text" formControlName="username" required></ion-input>
-              </ion-item>
-              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                <div *ngIf="f.username.errors.required">Username is required</div>
-              </div>
-              <ion-item>
-                <ion-label position="floating">Password</ion-label>
-                <ion-input type="password" formControlName="password" required></ion-input>
-              </ion-item>
-              <div *ngIf="f.username.errors" class="invalid-feedback">
-                <div *ngIf="f.username.errors.required">Password is required</div>
-              </div>
-              <br>
-              <ion-item>
-                <ion-checkbox slot="start" color="danger"></ion-checkbox>
-                <ion-label>Remember Me</ion-label>
-              </ion-item>
-              <br>
-              <ion-button (click)="onSubmit()"  color="danger" expand="block" shape="round">Login</ion-button>
-              <br>
-              <div class="text-center"><a href="" slot="end">Forgot Password?</a></div>
-              <br>
-              <p class="ion-text-center">Not a member? Click on register</p>
-              <br>
-              <ion-button slot="end" expand="block" color="primary" shape="round" routerLink="/register">Register</ion-button>
-            </form>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+  <ion-content>
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-card-header>
+            </ion-card-header>
+            <ion-card-content>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="ion-padding">
+                  <h1 class="text-center">LOGIN TO YOUR ACCOUNT</h1>
+                </div>
+                <ion-item>
+                  <ion-label position="floating">Username</ion-label>
+                  <ion-input type="text" formControlName="username" required></ion-input>
+                </ion-item>
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                  <div *ngIf="f.username.errors.required">Username is required</div>
+                </div>
+                <ion-item>
+                  <ion-label position="floating">Password</ion-label>
+                  <ion-input type="password" formControlName="password" required></ion-input>
+                </ion-item>
+                <div *ngIf="f.username.errors" class="invalid-feedback">
+                  <div *ngIf="f.username.errors.required">Password is required</div>
+                </div>
+                <br>
+                <ion-item>
+                  <ion-checkbox slot="start" color="danger"></ion-checkbox>
+                  <ion-label>Remember Me</ion-label>
+                </ion-item>
+                <br>
+                <ion-button (click)="onSubmit()"  class="login-btn" expand="full">Login</ion-button>
+                <br>
+                <div class="text-center"><a href="" slot="end">Forgot Password?</a></div>
+                <br>
+                <p class="ion-text-center">Dont have an account?&nbsp;<span routerLink="/register" style="font-weight: bold;">Register</span></p>
+                <br>
+              </form>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

@@ -9,17 +9,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-grid class="ion-no-padding">
     <ion-row>
-      <ion-col size-md="12">
+      <ion-col>
         <ion-card>
           <ion-card-header>
           </ion-card-header>
           <ion-card-content>
-
             <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)">
               <div class="ion-padding">
-                <h1 class="text-center">Register for free account</h1>
+                <h1 class="text-center">REGISTER FOR FREE ACCOUNT</h1>
               </div>
               <ion-item>
                 <ion-label position="floating">First Name</ion-label>
@@ -61,7 +60,7 @@
                 <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
               </div>
               <ion-item>
-                <ion-label position="floating">Confirm password</ion-label>
+                <ion-label position="floating">Confirm Password</ion-label>
                 <ion-input type="password" formControlName="confirmPassword"
                   [ngClass]="{ 'is-invalid':submitted && f.confirmPassword.errors }"></ion-input>
               </ion-item>
@@ -74,12 +73,11 @@
                 <ion-label>I accept terms and conditions</ion-label>
               </ion-item>
               <br>
-              <ion-button class="register-btn" shape="round" (click)="onFormSubmit(registerForm.value)" [disabled]="registerForm.invalid" color="primary"
-                expand="full">Register</ion-button>
+              <ion-button class="register-btn" (click)="onFormSubmit(registerForm.value)" expand="full">REGISTER
+              </ion-button>
               <br>
-              <p class="ion-text-center">Already have an account?</p>
-              <br>
-              <ion-button color="danger" expand="full" shape="round" routerLink="/login">Login</ion-button>
+              <p class="ion-text-center">Already Have An Account?&nbsp;<span routerLink="/login"
+                  style="font-weight: bold;">Log In</span></p>
             </form>
           </ion-card-content>
         </ion-card>
