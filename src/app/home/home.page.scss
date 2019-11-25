@@ -26,17 +26,17 @@ strong {
   background-size: cover;
 }
 .header-segment {
-  text-align: center;
+  justify-content: center;
 }
 .header-segment a {
-  padding: 0px 15px;
+  padding: 0px 8px;
 }
 .notification-icon {
-  font-size: 23px;
+  font-size: 24px;
 }
 .ride-btn {
-  background: black;
-  color: whitesmoke;
+  background: #222428;
+  color: #ffffff;
   padding: 12px;
   text-align: center;
 }
@@ -57,10 +57,20 @@ iframe{
 }
 
 
-@media screen and (max-width: 424px) {
+
+// @media screen and (max-width: 424px) {
+//   .header-segment a {
+//     padding: 0px 7px;
+//     font-size: 15px;
+//   }
+//   .notification-icon {
+//     font-size: 20px;
+//   }
+// }
+@media screen and (max-width: 375px) {
   .header-segment a {
-    padding: 0px 7px;
-    font-size: 15px;
+    padding: 0px 5px;
+    font-size: 14px;
   }
   .notification-icon {
     font-size: 20px;

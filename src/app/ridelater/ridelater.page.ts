@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { HomePage } from '../home/home.page';
+
+
 
 @Component({
   selector: 'app-ridelater',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RidelaterPage implements OnInit {
 
-  constructor() { }
+  date = new Date().toISOString();
+
+  constructor(private el: ElementRef, private modalController: ModalController) { }
+
 
   ngOnInit() {
-  }
 
+  }
+  dismiss() {
+    // using the injected ModalController this page
+    // can "dismiss" itself and optionally pass back data
+    this.modalController.dismiss({
+      dismissed: true
+    });
+  }
 }

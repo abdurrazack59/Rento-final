@@ -9,14 +9,16 @@ import { GoogleMapsModule } from '@angular/google-maps';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule, HTTP_INTERCEPTORS, HttpParams} from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpParams } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
+import { RidelaterPageModule } from './ridelater/ridelater.module';
 // import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
-  declarations: [AppComponent,    ],
+  declarations: [AppComponent,],
   entryComponents: [],
   imports: [
     HttpClientModule,
@@ -24,12 +26,16 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     IonicModule.forRoot(),
     ReactiveFormsModule,
     GoogleMapsModule,
+    RidelaterPageModule,
+    FormsModule,
+
     AppRoutingModule
   ],
   providers: [
     Geolocation,
     StatusBar,
     HttpParams,
+    DatePicker,
     AuthService,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
@@ -41,4 +47,4 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

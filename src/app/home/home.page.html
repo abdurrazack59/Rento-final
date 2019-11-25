@@ -66,20 +66,19 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <div class="header-segment">
-          <a routerLink="/daily" routerLinkActive="active-link">Daily</a>
-          <a routerLink="/rentals" routerLinkActive="active-link">Rentals</a>
-          <a routerLink="/outstation" routerLinkActive="active-link">Outstation</a>
-          <a routerLink="/drive" routerLinkActive="active-link">Drive</a>
+        <div class="d-flex header-segment">
+          <div><a routerLink="/daily" routerLinkActive="active-link">Daily</a></div>
+          <div><a routerLink="/rentals" routerLinkActive="active-link">Rentals</a></div>
+          <div><a routerLink="/outstation" routerLinkActive="active-link">Outstation</a></div>
+          <div><a routerLink="/drive" routerLinkActive="active-link">Drive</a></div>
         </div>
-
-        <ion-icon name="notifications" slot="end" class="notification-icon"></ion-icon>
+        <ion-icon name="notifications" slot="end" class="notification-icon "></ion-icon>
       </ion-toolbar>
     </header>
     <ion-content>
-    
+
       <app-googlemap></app-googlemap>
-    
+
     </ion-content>
 
     <ion-segment scrollable>
@@ -110,7 +109,7 @@
 
     <div class="d-flex ride-btn">
       <div class="flex-fill">
-        <a routerLink="/ridelater">RIDE LATER</a>
+        <a (click)="rideLater()">RIDE LATER</a>
       </div>
       <span class="vertical-line"></span>
       <div class="flex-fill">

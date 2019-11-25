@@ -1,17 +1,18 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-googlemap',
   templateUrl: './googlemap.page.html',
   styleUrls: ['./googlemap.page.scss'],
 })
-export class GooglemapPage implements OnInit {
+export class GooglemapPage implements OnInit, AfterViewInit {
 
 
   directionForm: FormGroup;
 
-  @ViewChild('mapElement', { static: true }) gmapElement: any;
+  @ViewChild('mapElement', { static: true }) gmapElement: ElementRef;
+
 
   map: google.maps.Map;
 
@@ -21,20 +22,38 @@ export class GooglemapPage implements OnInit {
   currentLong: any;
 
   marker: google.maps.Marker;
-  directionsService: any;
-  directionsDisplay: any;
+  directionsService = new google.maps.DirectionsService;
+  directionsDisplay = new google.maps.DirectionsRenderer;
+
+  // start = this.directionForm.controls.pickup.value;
+  // end = this.directionForm.controls.drop.value;
 
   constructor(private fb: FormBuilder) {
-    this.createDirectionForm();
   }
 
+
+
   ngOnInit() {
+
+    this.directionForm = this.fb.group({
+      pickup: ['', Validators.required],
+      drop: ['', Validators.required]
+    });
+
     const mapProp = {
       center: new google.maps.LatLng(18.5793, 73.8143),
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+  }
+
+  ngAfterViewInit(): void {
+    const map = new google.maps.Map(this.gmapElement.nativeElement, {
+      zoom: 7,
+      center: { lat: 41.85, lng: -87.65 }
+    });
+    this.directionsDisplay.setMap(map);
   }
 
   findMe() {
@@ -96,19 +115,14 @@ export class GooglemapPage implements OnInit {
   }
 
 
-  createDirectionForm() {
-    this.directionForm = this.fb.group({
-      pickup: ['', Validators.required],
-      drop: ['', Validators.required]
-    });
-  }
 
-  calculateAndDisplayRoute(formValues) {
+
+  calculateAndDisplayRoute(form: NgForm) {
     const that = this;
     this.directionsService.route({
-      origin: formValues.source,
-      destination: formValues.destination,
-      travelMode: 'DRIVING'
+      origin: this.directionForm.value,
+      destination: this.directionForm.value,
+       // travelMode: 'DRIVING'
     }, (response, status) => {
       if (status === 'OK') {
         that.directionsDisplay.setDirections(response);

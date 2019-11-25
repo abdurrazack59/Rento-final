@@ -28,9 +28,16 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette|Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Source+Sans+Pro&display=swap');
-
+*{
+  font-family: 'Montserrat';
+}
 .buttonCss {
     color: red !important;
   }
  
-  
+.dialog-modal .modal-wrapper{
+  width: 70%;
+  height: 24%;
+  border-radius: 6px;
+  box-shadow: 0 16px 20px rgba(0,0,0,.4);
+}

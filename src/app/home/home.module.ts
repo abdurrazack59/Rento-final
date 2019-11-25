@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
@@ -10,6 +10,7 @@ import { GooglemapPage } from '../googlemap/googlemap.page';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild([
       {
@@ -18,6 +19,6 @@ import { GooglemapPage } from '../googlemap/googlemap.page';
       }
     ])
   ],
-  declarations: [HomePage, GooglemapPage]
+  declarations: [HomePage, GooglemapPage,]
 })
 export class HomePageModule {}

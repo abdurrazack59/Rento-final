@@ -31,6 +31,8 @@ ion-label {
 ion-content {
   --background: #ebeeef;
 }
+
+
 ion-card-header {
     --background: url("../../assets/images/register-img.png");
     background-size: 60% 90%;
@@ -49,6 +51,7 @@ p {
 ion-checkbox {
   --border-radius: 50%;
 }
+
 
 @media screen and (min-width:768px){
     ion-card-header{
