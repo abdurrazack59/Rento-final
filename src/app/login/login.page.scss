@@ -1,50 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Courgette|Roboto&display=swap");
 
 ion-title {
-  font-size: 3rem;
+  font-size: 2.2em;
   font-family: "Courgette";
 }
-
-ion-toolbar {
-  --background: aliceblue;
-}
-
-ion-card-title {
-  font-size: 30px;
-}
-
-.d-flex {
-  display: flex;
-  flex-direction: row;
-}
-.ml-auto {
-  margin-left: auto;
-}
 h1 {
-  font-size: 1.5rem;
+  font-size: 22px;
   color: #ff2e7a !important;
   font-family: "Montserrat";
   letter-spacing: 2px;
 }
 ion-card-header {
-  --background: url("../../assets/images/login-img.png");
-  background-size: 60% 90%;
+  --background: url("../../assets/images/login-img.jpg");
+  background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 260px;
-  background-color: white;
+  height: 250px;
 }
 p{
   font-family: "Montserrat";
 }
 ion-card-content {
-  background: white;
+  background: whitesmoke;
 }
 ion-item {
-  --background: white;
+  --background: whitesmoke;
 }
 ion-content {
-  --background:#ebeeef;
+  --background:white;
 }
 ion-label{
   color: grey !important;
@@ -56,10 +39,4 @@ ion-label{
 }
 ion-checkbox{
   --border-radius:50%;
-}
-
-@media screen and (min-width:768px){
-  ion-card-header{
-    background-size:50% 90%;
-  }
 }

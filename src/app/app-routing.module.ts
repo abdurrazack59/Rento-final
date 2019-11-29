@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './login/auth.guard';
+import { HomePage } from './home/home.page';
 
 
 const routes: Routes = [
@@ -11,14 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-     // canActivate: [AuthGuard],
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
-
-
-    // children:[
-    //   {path:'user',loadChildren:()=> import('./userprofile/user/user.module').then(m=>m.UserPageModule)}
-    // ]
-
+    // canActivate: [AuthGuard],
+    component: HomePage,
   },
 
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
@@ -31,6 +26,9 @@ const routes: Routes = [
   { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
   { path: 'ridelater', loadChildren: './ridelater/ridelater.module#RidelaterPageModule' },
   { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
+  { path: 'daily', loadChildren: './transport-mode/daily/daily.module#DailyPageModule' },
+  { path: 'rentals', loadChildren: './transport-mode/rentals/rentals.module#RentalsPageModule' },
+
   ];
 
 @NgModule({

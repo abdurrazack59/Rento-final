@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { RegisterApiService } from '../services/register-api.service';
 import { ModalController } from '@ionic/angular';
-import { RidelaterPage } from '../ridelater/ridelater.page';
 
 
 @Component({
@@ -38,15 +37,6 @@ export class HomePage implements OnInit {
     sessionStorage.removeItem('currentUser');
     this.router.navigate(['/login']);
     console.log('Logout Successful.');
-  }
-
-  async rideLater() {
-    const modal = await this.modalController.create({
-      component: RidelaterPage,
-      animated: true,
-      cssClass: 'dialog-modal',
-    });
-    return await modal.present();
   }
  
 }

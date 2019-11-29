@@ -10,49 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-  // public appPages = [
-  //   {
-  //     title: 'Home',
-  //     url: '/home',
-  //     icon: 'home'
-  //   },
-  //   {
-  //     title: 'Rento select',
-  //     url: '/home',
-  //     icon: 'checkbox-outline'
-  //   },
-  //   {
-  //     title: 'Book Now',
-  //     url: '/home',
-  //     icon: 'logo-model-s'
-  //   },
-  //   {
-  //     title: 'List',
-  //     url: '/list',
-  //     icon: 'list'
-  //   },
-  //   {
-  //     title: 'Share',
-  //     url: '/home',
-  //     icon: 'share'
-  //   },
-  //   {
-  //     title: 'Offers',
-  //     url: '/list',
-  //     icon: 'ice-cream'
-  //   },
-  //   {
-  //     title: 'Support',
-  //     url: '/home',
-  //     icon: 'build'
-  //   },
-  //   {
-  //     title: 'About',
-  //     url: '/home',
-  //     icon: 'alert'
-  //   },
-
-  // ];
+ 
 
   constructor(
     private platform: Platform,

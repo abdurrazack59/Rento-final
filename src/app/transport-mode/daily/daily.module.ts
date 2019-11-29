@@ -4,14 +4,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
+import { DailyPage } from './daily.page';
+import { GooglemapPage } from 'src/app/googlemap/googlemap.page';
 
-import { GooglemapPage } from './googlemap.page';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 const routes: Routes = [
   {
     path: '',
-    component: GooglemapPage
+    component: DailyPage
   }
 ];
 
@@ -19,11 +19,11 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [GooglemapPage],
-  providers: [Geolocation],
+  declarations: [DailyPage,GooglemapPage ],
+
 })
-export class GooglemapPageModule {}
+export class DailyPageModule {}

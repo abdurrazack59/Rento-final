@@ -4,7 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
-import { GooglemapPage } from '../googlemap/googlemap.page';
+import { SharedModule } from '../shared/shared.module';
+
 
 @NgModule({
   imports: [
@@ -12,13 +13,15 @@ import { GooglemapPage } from '../googlemap/googlemap.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
+    SharedModule,
     RouterModule.forChild([
       {
         path: '',
-        component: HomePage
+        component: HomePage,
       }
     ])
   ],
-  declarations: [HomePage, GooglemapPage,]
+  declarations: [HomePage , ],
+
 })
 export class HomePageModule {}
