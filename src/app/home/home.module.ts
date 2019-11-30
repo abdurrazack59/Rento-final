@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
-import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +12,6 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    SharedModule,
     RouterModule.forChild([
       {
         path: '',
@@ -21,7 +19,7 @@ import { SharedModule } from '../shared/shared.module';
       }
     ])
   ],
-  declarations: [HomePage , ],
+  declarations: [HomePage, ],
 
 })
-export class HomePageModule {}
+export class HomePageModule { }

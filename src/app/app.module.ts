@@ -15,11 +15,11 @@ import { AuthService } from './services/auth.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
 import { RidelaterPageModule } from './ridelater/ridelater.module';
-import { HomePage } from './home/home.page';
+import { GooglemapPage } from './googlemap/googlemap.page';
 // import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
-  declarations: [AppComponent,HomePage],
+  declarations: [AppComponent, GooglemapPage],
   entryComponents: [],
   imports: [
     HttpClientModule,
@@ -46,6 +46,5 @@ import { HomePage } from './home/home.page';
     // }
   ],
   bootstrap: [AppComponent],
-
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './login/auth.guard';
-import { HomePage } from './home/home.page';
 
 
 const routes: Routes = [
@@ -13,7 +12,7 @@ const routes: Routes = [
   {
     path: 'home',
     // canActivate: [AuthGuard],
-    component: HomePage,
+    loadChildren: './home/home.module#HomePageModule'
   },
 
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },

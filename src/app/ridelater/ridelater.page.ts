@@ -1,7 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { HomePage } from '../home/home.page';
-
 
 
 @Component({

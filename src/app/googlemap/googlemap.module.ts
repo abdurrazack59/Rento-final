@@ -25,5 +25,6 @@ const routes: Routes = [
   ],
   declarations: [GooglemapPage],
   providers: [Geolocation],
+
 })
 export class GooglemapPageModule {}

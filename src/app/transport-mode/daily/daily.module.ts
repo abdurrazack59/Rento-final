@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 import { DailyPage } from './daily.page';
-import { GooglemapPage } from 'src/app/googlemap/googlemap.page';
 
 
 const routes: Routes = [
@@ -23,7 +22,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DailyPage,GooglemapPage ],
-
+  declarations: [DailyPage, ],
+ 
 })
 export class DailyPageModule {}
