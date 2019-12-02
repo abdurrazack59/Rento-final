@@ -6,7 +6,7 @@ import { RegisterApiService } from '../services/register-api.service';
 import { ModalController } from '@ionic/angular';
 
 
-@Component({
+@Component ({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],

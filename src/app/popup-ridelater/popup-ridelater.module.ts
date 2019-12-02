@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RidelaterPage } from './ridelater.page';
+import { PopupRidelaterPage } from './popup-ridelater.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: RidelaterPage
+    component: PopupRidelaterPage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RidelaterPage]
+  declarations: [PopupRidelaterPage]
 })
-export class RidelaterPageModule {}
+export class PopupRidelaterPageModule {}

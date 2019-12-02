@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu side="start">
+  <ion-menu side="start" contentId="my-content">
     <ion-header>
       <ion-toolbar translucent>
         <ion-item routerLink="/user" router-direction="back">
@@ -60,27 +60,31 @@
     </ion-content>
   </ion-menu>
 
-  <div class="ion-page" main>
-    <header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <div class="d-flex header-segment">
-          <div><a routerLink="/daily" routerLinkActive="active-link">Daily</a></div>
-          <div><a routerLink="/rentals" routerLinkActive="active-link">Rentals</a></div>
-          <div><a routerLink="/outstation" routerLinkActive="active-link">Outstation</a></div>
-          <div><a routerLink="/drive" routerLinkActive="active-link">Drive</a></div>
-        </div>
-        <ion-icon name="notifications" slot="end" class="notification-icon "></ion-icon>
-      </ion-toolbar>
-    </header>
+  <div class="ion-page" id="my-content">
+
+
     <ion-content>
+      <ion-tabs>
+        <ion-tab-bar slot="top">
+          <ion-menu-button></ion-menu-button>
+          <ion-tab-button tab="daily">
+            <ion-label>Daily</ion-label>
+          </ion-tab-button>
 
-      
+          <ion-tab-button tab="rentals">
+            <ion-label>Rentals</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="tab3">
+            <ion-label>Outstaion</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="tab4">
+            <ion-label>Drive</ion-label>
+          </ion-tab-button>
+          <ion-icon name="notifications" class="notification-icon "></ion-icon>
+        </ion-tab-bar>
+      </ion-tabs>
     </ion-content>
-
   </div>
-
 </ion-app>
-

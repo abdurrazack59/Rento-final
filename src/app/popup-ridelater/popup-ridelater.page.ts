@@ -1,17 +1,15 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-
-
 @Component({
-  selector: 'app-ridelater',
-  templateUrl: './ridelater.page.html',
-  styleUrls: ['./ridelater.page.scss'],
+  selector: 'app-popup-ridelater',
+  templateUrl: './popup-ridelater.page.html',
+  styleUrls: ['./popup-ridelater.page.scss'],
 })
-export class RidelaterPage implements OnInit {
+export class PopupRidelaterPage implements OnInit {
 
   date = new Date().toISOString();
 
-  constructor(private el: ElementRef, private modalController: ModalController) { }
+  constructor(private modalController: ModalController) { }
 
 
   ngOnInit() {

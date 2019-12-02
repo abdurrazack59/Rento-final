@@ -11,22 +11,16 @@ p {
   padding: 0px;
 }
 
-.header-segment {
-  justify-content: center;
-}
-.header-segment a {
-  padding: 0px 8px;
-}
 .notification-icon {
   font-size: 24px;
 }
 
-@media screen and (max-width: 375px) {
-  .header-segment a {
-    padding: 0px 5px;
-    font-size: 14px;
-  }
-  .notification-icon {
-    font-size: 20px;
-  }
-}
+// @media screen and (max-width:375px){
+//   .notification-icon {
+//      font-size: 16px !important;
+//      }
+//      ion-tab-button{
+//        padding-left: 4px;
+//        padding-right: 4px;
+//      }
+// }

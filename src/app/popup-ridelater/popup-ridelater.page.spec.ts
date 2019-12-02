@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RidelaterPage } from './ridelater.page';
+import { PopupRidelaterPage } from './popup-ridelater.page';
 
-describe('RidelaterPage', () => {
-  let component: RidelaterPage;
-  let fixture: ComponentFixture<RidelaterPage>;
+describe('PopupRidelaterPage', () => {
+  let component: PopupRidelaterPage;
+  let fixture: ComponentFixture<PopupRidelaterPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RidelaterPage ],
+      declarations: [ PopupRidelaterPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RidelaterPage);
+    fixture = TestBed.createComponent(PopupRidelaterPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

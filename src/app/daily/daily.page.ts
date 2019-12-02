@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { RidelaterPage } from 'src/app/ridelater/ridelater.page';
+import { PopupRidelaterPage } from '../popup-ridelater/popup-ridelater.page';
 
 @Component({
   selector: 'app-daily',
@@ -15,7 +15,7 @@ export class DailyPage implements OnInit {
   }
   async rideLater() {
     const modal = await this.modalController.create({
-      component: RidelaterPage,
+      component: PopupRidelaterPage,
       animated: true,
       cssClass: 'dialog-modal',
     });

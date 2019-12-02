@@ -6,8 +6,7 @@ import { AuthGuard } from './login/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'register',
-    pathMatch: 'full'
+    loadChildren: './home/home.module#HomePageModule'
   },
   {
     path: 'home',
@@ -23,10 +22,10 @@ const routes: Routes = [
   { path: 'user', loadChildren: './userprofile/user/user.module#UserPageModule' },
   { path: 'about', loadChildren: './userprofile/about/about.module#AboutPageModule' },
   { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
-  { path: 'ridelater', loadChildren: './ridelater/ridelater.module#RidelaterPageModule' },
   { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
-  { path: 'daily', loadChildren: './transport-mode/daily/daily.module#DailyPageModule' },
-  { path: 'rentals', loadChildren: './transport-mode/rentals/rentals.module#RentalsPageModule' },
+  { path: 'main', loadChildren: './main/main.module#MainPageModule' },
+  { path: 'popup-ridelater', loadChildren: './popup-ridelater/popup-ridelater.module#PopupRidelaterPageModule' },
+
 
   ];
 

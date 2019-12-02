@@ -14,8 +14,33 @@ import { HomePage } from './home.page';
     IonicModule,
     RouterModule.forChild([
       {
-        path: '',
+        path: 'home',
         component: HomePage,
+        children: [
+          {
+            path: 'daily',
+            children: [
+              {
+                path: '',
+                loadChildren: '../daily/daily.module#DailyPageModule'
+              }
+            ]
+          },
+          {
+            path: 'rentals',
+            children: [
+              {
+                path: '',
+                loadChildren: '../rentals/rentals.module#RentalsPageModule'
+              }
+            ]
+          },
+        ]
+      },
+      {
+        path: '',
+        redirectTo: '/home/daily',
+        pathMatch: 'full'
       }
     ])
   ],
