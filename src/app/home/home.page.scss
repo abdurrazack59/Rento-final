@@ -14,13 +14,16 @@ p {
 .notification-icon {
   font-size: 24px;
 }
+ion-tab-button {
+  --color-selected: #ff2e7a;
+}
+.map{
+  height: 100%;
+}
 
-// @media screen and (max-width:375px){
-//   .notification-icon {
-//      font-size: 16px !important;
-//      }
-//      ion-tab-button{
-//        padding-left: 4px;
-//        padding-right: 4px;
-//      }
-// }
+@media screen and (max-width:375px){
+  ion-tab-button {
+    --padding-end: 0px !important;
+    --padding-start: 0px !important;
+  }
+}

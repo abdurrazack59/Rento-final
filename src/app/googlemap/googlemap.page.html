@@ -1,5 +1,5 @@
 <ion-content>
-  <form [formGroup]="directionForm" (ngSubmit)="calculateAndDisplayRoute(directionForm.value)">
+  <!-- <form [formGroup]="directionForm" (ngSubmit)="calculateAndDisplayRoute(directionForm.value)">
     <ion-item>
       <ion-label position="stacked">PICKUP</ion-label>
       <ion-input formControlName="pickup" placeholder="Enter pickup location"></ion-input>
@@ -9,10 +9,14 @@
       <ion-input formControlName="drop" placeholder="Enter drop location"></ion-input>
     </ion-item>
     <ion-button expand="full" type="submit" [disabled]="directionForm.invalid">Get Direction</ion-button>
-  </form>
+  </form> -->
 
-  <div #mapElement class="map"></div>
-    <ion-button [disabled]="isTracking" color="primary" (click)="findMe()" expand="full">Find me</ion-button>
-</ion-content>
+  <!-- <div #mapElement class="map"></div>
+    <ion-button [disabled]="isTracking" color="primary" (click)="findMe()" expand="full">Find me</ion-button> -->
+    <div id="map_canvas">
+      <ion-button ion-button (click)="onButtonClick()">Demo</ion-button>
+    </div>
+
+  </ion-content>
 
 <!-- <ion-button class="btn btn-danger" (click)="trackMe()">Track me</ion-button> -->

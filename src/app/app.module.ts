@@ -14,11 +14,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
-import { GooglemapPage } from './googlemap/googlemap.page';
 // import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
-  declarations: [AppComponent, GooglemapPage],
+  declarations: [AppComponent, ],
   entryComponents: [],
   imports: [
     HttpClientModule,

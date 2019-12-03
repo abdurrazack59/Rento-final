@@ -1,41 +1,41 @@
 
   <ion-content>
-    
+      <ion-segment scrollable>
+          <ion-segment-button checked>
+            <a routerLink=""><img src="../../assets/images/ola-micro-active.svg" style="height: 50px;width: 50px;"
+                alt=""></a>
+          </ion-segment-button>
+          <ion-segment-button checked>
+            <a routerLink=""><img src="../../assets/images/ola-prime-play-active.svg" style="height: 50px;width: 50px;"
+                alt=""></a>
+          </ion-segment-button>
+          <ion-segment-button checked>
+            <a routerLink=""><img src="../../assets/images/ola-prime-sedan-active.svg" style="height: 50px;width: 50px;"
+                alt=""></a>
+          </ion-segment-button>
+          <ion-segment-button checked>
+            <a routerLink=""><img src="../../assets/images/ola-prime-suv-active.svg" style="height: 50px;width: 50px;"
+                alt=""></a>
+          </ion-segment-button>
+          <ion-segment-button checked>
+            <a routerLink=""><img src="../../assets/images/ola-lux-active.svg" style="height: 50px;width: 50px;" alt=""></a>
+          </ion-segment-button>
+          <ion-segment-button checked>
+            <a routerLink=""><img src="../../assets/images/ola-kaali-peeli-active.svg" style="height: 50px;width: 50px;"
+                alt=""></a>
+          </ion-segment-button>
+        </ion-segment>
+      
+        <div class="d-flex ride-btn">
+          <div class="flex-fill">
+            <a (click)="rideLater()">RIDE LATER</a>
+          </div>
+          <span class="vertical-line"></span>
+          <div class="flex-fill">
+            <a routerLink="/ridenow">RIDE NOW</a>
+          </div>
+        </div>
   </ion-content>
 
-  <ion-segment scrollable>
-    <ion-segment-button checked>
-      <a routerLink=""><img src="../../assets/images/ola-micro-active.svg" style="height: 50px;width: 50px;"
-          alt=""></a>
-    </ion-segment-button>
-    <ion-segment-button checked>
-      <a routerLink=""><img src="../../assets/images/ola-prime-play-active.svg" style="height: 50px;width: 50px;"
-          alt=""></a>
-    </ion-segment-button>
-    <ion-segment-button checked>
-      <a routerLink=""><img src="../../assets/images/ola-prime-sedan-active.svg" style="height: 50px;width: 50px;"
-          alt=""></a>
-    </ion-segment-button>
-    <ion-segment-button checked>
-      <a routerLink=""><img src="../../assets/images/ola-prime-suv-active.svg" style="height: 50px;width: 50px;"
-          alt=""></a>
-    </ion-segment-button>
-    <ion-segment-button checked>
-      <a routerLink=""><img src="../../assets/images/ola-lux-active.svg" style="height: 50px;width: 50px;" alt=""></a>
-    </ion-segment-button>
-    <ion-segment-button checked>
-      <a routerLink=""><img src="../../assets/images/ola-kaali-peeli-active.svg" style="height: 50px;width: 50px;"
-          alt=""></a>
-    </ion-segment-button>
-  </ion-segment>
-
-  <div class="d-flex ride-btn">
-    <div class="flex-fill">
-      <a (click)="rideLater()">RIDE LATER</a>
-    </div>
-    <span class="vertical-line"></span>
-    <div class="flex-fill">
-      <a routerLink="/ridenow">RIDE NOW</a>
-    </div>
-  </div>
+ 
 

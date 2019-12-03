@@ -35,6 +35,24 @@ import { HomePage } from './home.page';
               }
             ]
           },
+          {
+            path: 'outstation',
+            children: [
+              {
+                path: '',
+                loadChildren: '../outstation/outstation.module#OutstationPageModule'
+              }
+            ]
+          },
+          {
+            path: 'selfdrive',
+            children: [
+              {
+                path: '',
+                loadChildren: '../selfdrive/selfdrive.module#SelfdrivePageModule'
+              }
+            ]
+          },
         ]
       },
       {
@@ -45,6 +63,7 @@ import { HomePage } from './home.page';
     ])
   ],
   declarations: [HomePage, ],
+  
 
 })
 export class HomePageModule { }

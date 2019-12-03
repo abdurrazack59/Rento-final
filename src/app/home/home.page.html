@@ -61,30 +61,48 @@
   </ion-menu>
 
   <div class="ion-page" id="my-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-tabs>
+          <ion-tab-bar slot="top">
+            <ion-menu-button></ion-menu-button>
+            <ion-tab-button tab="daily">
+              <ion-label>Daily</ion-label>
+            </ion-tab-button>
 
+            <ion-tab-button tab="rentals">
+              <ion-label>Rentals</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button tab="outstation">
+              <ion-label>Outstaion</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button tab="selfdrive">
+              <ion-label>Drive</ion-label>
+            </ion-tab-button>
+            <ion-icon name="notifications" class="notification-icon "></ion-icon>
+          </ion-tab-bar>
+        </ion-tabs>
+
+      </ion-toolbar>
+    </ion-header>
 
     <ion-content>
-      <ion-tabs>
-        <ion-tab-bar slot="top">
-          <ion-menu-button></ion-menu-button>
-          <ion-tab-button tab="daily">
-            <ion-label>Daily</ion-label>
-          </ion-tab-button>
-
-          <ion-tab-button tab="rentals">
-            <ion-label>Rentals</ion-label>
-          </ion-tab-button>
-
-          <ion-tab-button tab="tab3">
-            <ion-label>Outstaion</ion-label>
-          </ion-tab-button>
-
-          <ion-tab-button tab="tab4">
-            <ion-label>Drive</ion-label>
-          </ion-tab-button>
-          <ion-icon name="notifications" class="notification-icon "></ion-icon>
-        </ion-tab-bar>
-      </ion-tabs>
+      <form [formGroup]="directionForm" (ngSubmit)="calculateAndDisplayRoute(directionForm.value)">
+        <ion-item>
+          <ion-label position="floating">Source</ion-label>
+          <ion-input formControlName="source"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Destination</ion-label>
+          <ion-input formControlName="destination"></ion-input>
+        </ion-item>
+        <ion-button expand="full" type="submit" [disabled]="directionForm.invalid">Get Direction</ion-button>
+      </form>
+    
+      <div #mapElement class="map"></div>
     </ion-content>
+    
   </div>
 </ion-app>

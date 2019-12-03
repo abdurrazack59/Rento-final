@@ -23,8 +23,8 @@ const routes: Routes = [
   { path: 'about', loadChildren: './userprofile/about/about.module#AboutPageModule' },
   { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
   { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
-  { path: 'main', loadChildren: './main/main.module#MainPageModule' },
   { path: 'popup-ridelater', loadChildren: './popup-ridelater/popup-ridelater.module#PopupRidelaterPageModule' },
+
 
 
   ];

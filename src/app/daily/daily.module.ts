@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 import { DailyPage } from './daily.page';
+import { PopupRidelaterPage } from '../popup-ridelater/popup-ridelater.page';
 
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [DailyPage, ],
- 
+  declarations: [DailyPage, PopupRidelaterPage ],
+  entryComponents: [PopupRidelaterPage],
 })
 export class DailyPageModule {}
