@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'user', loadChildren: './userprofile/user/user.module#UserPageModule' },
   { path: 'about', loadChildren: './userprofile/about/about.module#AboutPageModule' },
-  { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
+  // { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
   { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
   { path: 'popup-ridelater', loadChildren: './popup-ridelater/popup-ridelater.module#PopupRidelaterPageModule' },
 

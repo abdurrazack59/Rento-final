@@ -20,7 +20,8 @@ import { HomePage } from './home.page';
           {path: 'daily',  loadChildren: '../daily/daily.module#DailyPageModule' },
           {path: 'rentals',  loadChildren: '../rentals/rentals.module#RentalsPageModule'},
           {path: 'outstation',  loadChildren: '../outstation/outstation.module#OutstationPageModule'},
-          {path: 'selfdrive',  loadChildren: '../selfdrive/selfdrive.module#SelfdrivePageModule'}
+          {path: 'selfdrive',  loadChildren: '../selfdrive/selfdrive.module#SelfdrivePageModule'},
+          {path: 'ridenow',  loadChildren: '../ridenow/ridenow.module#RidenowPageModule'}
       //     {
       //       path: 'daily',
       //       children: [
