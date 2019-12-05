@@ -1,8 +1,8 @@
 <ion-app>
   <ion-menu side="start" contentId="my-content">
     <ion-header>
-      <ion-toolbar translucent>
-        <ion-item routerLink="/user" router-direction="back">
+      <ion-toolbar>
+        <ion-item routerLink="/user">
           <ion-avatar slot="start">
             <img [src]="[userImg]">
           </ion-avatar>
@@ -10,7 +10,7 @@
             <b>{{userName}}</b>
             <p>{{mobileNumber}}</p>
           </ion-label>
-          <ion-icon name="arrow-dropright"></ion-icon>
+          <ion-icon name="arrow-dropright" slot="end"></ion-icon>
         </ion-item>
       </ion-toolbar>
     </ion-header>
@@ -63,7 +63,23 @@
   <div class="ion-page" id="my-content">
     <ion-header>
       <ion-toolbar>
-        <ion-tabs>
+
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <div class="header-segment d-flex justify-content-center">
+          <div><a routerLink="/home/daily" routerLinkActive="active-link">Daily</a></div>
+          <div><a routerLink="/home/rentals" routerLinkActive="active-link">Rentals</a></div>
+          <div><a routerLink="/home/outstation" routerLinkActive="active-link">Outstation</a></div>
+          <div><a routerLink="/home/selfdrive" routerLinkActive="active-link">Drive</a></div>
+        </div>
+
+        
+            <ion-icon name="notifications" slot="end" class="notification-icon"></ion-icon>
+            <ion-badge color="danger" slot="end">2</ion-badge>
+        
+       
+        <!-- <ion-tabs>
           <ion-tab-bar slot="top">
             <ion-menu-button></ion-menu-button>
             <ion-tab-button tab="daily">
@@ -83,7 +99,7 @@
             </ion-tab-button>
             <ion-icon name="notifications" class="notification-icon "></ion-icon>
           </ion-tab-bar>
-        </ion-tabs>
+        </ion-tabs> -->
 
       </ion-toolbar>
     </ion-header>
@@ -98,11 +114,11 @@
           <ion-label position="floating">Destination</ion-label>
           <ion-input formControlName="destination"></ion-input>
         </ion-item>
-        <ion-button expand="full" type="submit" [disabled]="directionForm.invalid">Get Direction</ion-button>
+        <ion-button expand="full" type="submit" [disabled]="directionForm.invalid" class="direction-btn">Get Direction</ion-button>
       </form>
-    
+
       <div #mapElement class="map"></div>
     </ion-content>
-    
+    <router-outlet></router-outlet>
   </div>
 </ion-app>

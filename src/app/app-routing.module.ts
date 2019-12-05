@@ -6,13 +6,13 @@ import { AuthGuard } from './login/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: './home/home.module#HomePageModule',
   },
-  {
-    path: 'home',
-    // canActivate: [AuthGuard],
-    loadChildren: './home/home.module#HomePageModule'
-  },
+  // {
+  //   path: 'home',
+  //   // canActivate: [AuthGuard],
+  //   loadChildren: './home/home.module#HomePageModule'
+  // },
 
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'admin', loadChildren: './admin/admin.module#AdminPageModule' },
@@ -24,8 +24,6 @@ const routes: Routes = [
   { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
   { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
   { path: 'popup-ridelater', loadChildren: './popup-ridelater/popup-ridelater.module#PopupRidelaterPageModule' },
-
-
 
   ];
 

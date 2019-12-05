@@ -1,21 +1,26 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-icon name="close" slot="end" class="ion-padding close" (click)="dismiss()"></ion-icon>
+      <ion-title style="font-size: 18px;">
+        Pick date and time
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-header>
-  <ion-toolbar>
-      <ion-icon name="close" slot="end" class="ion-padding close" (click)="dismiss()" ></ion-icon>
-    <ion-title>
-      Pick date and time
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+  <ion-content>
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime [min]="date" [value]="date" placeholder="Select Date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime display-format="h:mm A" [value]="date" picker-format="h:mm A" placeholder="Select Time">
+      </ion-datetime>
+    </ion-item>
+  </ion-content>
 
-<ion-content>
-<ion-item>
-  <ion-label>Date</ion-label>
-  <ion-datetime [min]="date" placeholder="Select Date"></ion-datetime>
-</ion-item>
-<ion-item>
-  <ion-label>Time</ion-label>
-  <ion-datetime display-format="h:mm A" picker-format="h:mm A" placeholder="Select Time"></ion-datetime>
-</ion-item>
-</ion-content>
-<ion-button expand="full" color="dark" class="confirm-btn">Confirm Schedule</ion-button>
+  <ion-footer>
+    <ion-button expand="full" color="dark" class="confirm-btn" (click)="confirmBooking()">Confirm Schedule</ion-button>
+  </ion-footer>
+</ion-app>

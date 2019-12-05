@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Courgette|Roboto&display=swap");
 
-
 a {
   all: unset;
 }
@@ -11,19 +10,55 @@ p {
   padding: 0px;
 }
 
-.notification-icon {
-  font-size: 24px;
-}
-ion-tab-button {
-  --color-selected: #ff2e7a;
-}
-.map{
+// ion-tab-button {
+//   --color-selected: #ff2e7a;
+// }
+.map {
   height: 100%;
 }
+.notification-icon {
+  padding: 2px 0px;
+  font-size: 23px;
+  position: relative;
+  overflow: visible;
+  left: -7px;
+}
+ion-badge {
+  position: absolute;
+  top: 13px;
+  right: 1px;
+  border-radius: 100%;
+  overflow: visible;
+  font-size: 8px;
+}
+.header-segment a {
+  padding: 2px 12px;
+}
+.active-link {
+  color: white;
+  background: #ff2e7a;
+  border-radius: 10px;
+}
+.direction-btn {
+  --background: #ff2e7a;
+  color: white;
+}
 
-@media screen and (max-width:375px){
-  ion-tab-button {
-    --padding-end: 0px !important;
-    --padding-start: 0px !important;
+@media screen and (max-width: 411px) {
+  .header-segment a {
+    padding: 2px 10px;
+    font-size: 15px;
   }
 }
+@media screen and (max-width: 370px) {
+  .header-segment a {
+    padding: 2px 5px;
+    font-size: 14px;
+  }
+}
+// @media screen and (max-width:375px){
+//   ion-tab-button {
+//     --padding-end: 0px !important;
+//     --padding-start: 0px !important;
+//   }
+// }

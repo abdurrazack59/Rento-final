@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PopupRidelaterPage } from '../popup-ridelater/popup-ridelater.page';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-rentals',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RentalsPage implements OnInit {
 
-  constructor() { }
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() {
   }
-
+  async rideLater() {
+    const modal = await this.modalController.create({
+      component: PopupRidelaterPage,
+      animated: true,
+      cssClass: 'dialog-modal',
+    });
+    return await modal.present();
+  }
 }
