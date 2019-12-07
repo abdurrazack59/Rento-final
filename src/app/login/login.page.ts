@@ -46,7 +46,6 @@ export class LoginPage implements OnInit {
           this.registerApiService.getUserDetails()
             .subscribe((data) => {
             console.log(data);
-
           });
         },
         Error => {

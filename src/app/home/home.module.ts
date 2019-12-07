@@ -64,7 +64,7 @@ import { HomePage } from './home.page';
         path: '',
         redirectTo: '/home/daily',
         pathMatch: 'full'
-      }
+      },
     ])
   ],
   declarations: [HomePage, ],

@@ -9,7 +9,7 @@ import { PopupRidelaterPage } from './popup-ridelater.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'popup-ridelater',
     component: PopupRidelaterPage
   }
 ];
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PopupRidelaterPage]
+  declarations: [PopupRidelaterPage],
 })
 export class PopupRidelaterPageModule {}

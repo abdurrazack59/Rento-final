@@ -8,14 +8,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true">
   <ion-grid class="ion-no-padding">
     <ion-row>
-      <ion-col>
+      <ion-col class="ion-no-padding">
         <ion-card>
           <ion-card-header>
           </ion-card-header>
-          <ion-card-content>
+          <ion-card-content >
             <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit(registerForm.value)">
               <div class="ion-padding">
                 <h1 class="text-center">REGISTER FOR FREE ACCOUNT</h1>

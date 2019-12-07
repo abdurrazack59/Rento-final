@@ -17,18 +17,18 @@ export class PopupRidelaterPage implements OnInit {
   ngOnInit() {
 
   }
+
   dismiss() {
     // using the injected ModalController this page
     // can "dismiss" itself and optionally pass back data
-    this.modalController.dismiss({
-      dismissed: true
-    });
+    this.modalController.dismiss( null, 'cancel'
+    );
   }
 
   confirmBooking(){
     this.modalController.dismiss({
       dismissed: true,
     });
-    this.router.navigate(['/home/rentals']);
+    this.router.navigate(['/home/ridenow']);
   }
 }

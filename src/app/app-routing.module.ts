@@ -7,13 +7,13 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: './home/home.module#HomePageModule',
+
   },
   // {
   //   path: 'home',
   //   // canActivate: [AuthGuard],
   //   loadChildren: './home/home.module#HomePageModule'
   // },
-
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'admin', loadChildren: './admin/admin.module#AdminPageModule' },
   { path: 'driver', loadChildren: './driver/driver.module#DriverPageModule' },
@@ -22,9 +22,11 @@ const routes: Routes = [
   { path: 'user', loadChildren: './userprofile/user/user.module#UserPageModule' },
   { path: 'about', loadChildren: './userprofile/about/about.module#AboutPageModule' },
   // { path: 'ridenow', loadChildren: './ridenow/ridenow.module#RidenowPageModule' },
-  { path: 'googlemap', loadChildren: './googlemap/googlemap.module#GooglemapPageModule' },
   { path: 'popup-ridelater', loadChildren: './popup-ridelater/popup-ridelater.module#PopupRidelaterPageModule' },
-
+  {
+    path: '**',
+    redirectTo: '/home/daily'
+  }
   ];
 
 @NgModule({

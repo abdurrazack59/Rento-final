@@ -14,6 +14,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
+import { PopupRidelaterPageModule } from './popup-ridelater/popup-ridelater.module';
+
 // import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
@@ -26,6 +28,7 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
     ReactiveFormsModule,
     GoogleMapsModule,
     FormsModule,
+    PopupRidelaterPageModule,
     AppRoutingModule
   ],
   providers: [

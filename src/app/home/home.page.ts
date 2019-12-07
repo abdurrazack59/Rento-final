@@ -114,7 +114,23 @@ export class HomePage implements OnInit {
     console.log('Logout Successful.');
   }
 
+  hide() {
+    if (this.router.url === '/home/ridenow') {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  show() {
+    if (this.router.url === '/home/ridenow') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
+
 
 
 

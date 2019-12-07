@@ -4,17 +4,13 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
-// const httpOptions = {
-//   headers: new HttpHeaders({'Content-Type': 'application/json'})
-// };
-
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterApiService {
 
 
-  constructor( private httpClient: HttpClient, private httpParams: HttpParams, private authService: AuthService
+  constructor( private httpClient: HttpClient, private authService: AuthService
     ) { }
 
   addNewUser(form) {

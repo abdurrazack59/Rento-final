@@ -2,7 +2,7 @@
   <ion-menu side="start" contentId="my-content">
     <ion-header>
       <ion-toolbar>
-        <ion-item routerLink="/user">
+        <ion-item routerLink="/user" lines="none">
           <ion-avatar slot="start">
             <img [src]="[userImg]">
           </ion-avatar>
@@ -61,7 +61,7 @@
   </ion-menu>
 
   <div class="ion-page" id="my-content">
-    <ion-header>
+    <ion-header *ngIf="hide()">
       <ion-toolbar>
 
         <ion-buttons slot="start">
@@ -73,34 +73,17 @@
           <div><a routerLink="/home/outstation" routerLinkActive="active-link">Outstation</a></div>
           <div><a routerLink="/home/selfdrive" routerLinkActive="active-link">Drive</a></div>
         </div>
+        <ion-icon name="notifications" slot="end" class="notification-icon"></ion-icon>
+        <ion-badge color="danger" slot="end">2</ion-badge>
+      </ion-toolbar>
+    </ion-header>
 
-        
-            <ion-icon name="notifications" slot="end" class="notification-icon"></ion-icon>
-            <ion-badge color="danger" slot="end">2</ion-badge>
-        
-       
-        <!-- <ion-tabs>
-          <ion-tab-bar slot="top">
-            <ion-menu-button></ion-menu-button>
-            <ion-tab-button tab="daily">
-              <ion-label>Daily</ion-label>
-            </ion-tab-button>
-
-            <ion-tab-button tab="rentals">
-              <ion-label>Rentals</ion-label>
-            </ion-tab-button>
-
-            <ion-tab-button tab="outstation">
-              <ion-label>Outstaion</ion-label>
-            </ion-tab-button>
-
-            <ion-tab-button tab="selfdrive">
-              <ion-label>Drive</ion-label>
-            </ion-tab-button>
-            <ion-icon name="notifications" class="notification-icon "></ion-icon>
-          </ion-tab-bar>
-        </ion-tabs> -->
-
+    <ion-header *ngIf="show()">
+      <ion-toolbar>
+        <ion-title>Mini, 7min away</ion-title>
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/home/daily"></ion-back-button>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
 
@@ -114,7 +97,8 @@
           <ion-label position="floating">Destination</ion-label>
           <ion-input formControlName="destination"></ion-input>
         </ion-item>
-        <ion-button expand="full" type="submit" [disabled]="directionForm.invalid" class="direction-btn">Get Direction</ion-button>
+        <ion-button expand="full" type="submit" [disabled]="directionForm.invalid" class="direction-btn">Get Direction
+        </ion-button>
       </form>
 
       <div #mapElement class="map"></div>
