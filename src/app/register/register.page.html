@@ -20,7 +20,7 @@
               <div class="ion-padding">
                 <h1 class="text-center">REGISTER FOR FREE ACCOUNT</h1>
               </div>
-              <ion-item>
+              <ion-item class="ion-no-padding">
                 <ion-label position="floating">First Name</ion-label>
                 <ion-input type="text" formControlName="firstName"></ion-input>
               </ion-item>
@@ -28,7 +28,7 @@
                 || registerForm.controls['firstName'].dirty)">
                 Please enter your firstname
               </div>
-              <ion-item>
+              <ion-item class="ion-no-padding">
                 <ion-label position="floating">Last Name</ion-label>
                 <ion-input type="text" formControlName="lastName"></ion-input>
               </ion-item>
@@ -36,7 +36,7 @@
                 || registerForm.controls['lastName'].dirty)">
                 Please enter your lastname
               </div>
-              <ion-item>
+              <ion-item class="ion-no-padding">
                 <ion-label position="floating">Email</ion-label>
                 <ion-input type="email" formControlName="email"></ion-input>
               </ion-item>
@@ -45,25 +45,25 @@
                 Please enter your email
               </div>
               <div class="error" *ngIf="registerForm.controls['email'].hasError('email')">Please enter a valid email</div>
-              <ion-item>
+              <ion-item class="ion-no-padding">
                 <ion-label position="floating">Mobile Number</ion-label>
                 <ion-input type="text" (keypress)="isInputNumber($event)" formControlName="mobileNumber"></ion-input>
               </ion-item>
               <div class="error" *ngIf="registerForm.controls['mobileNumber'].hasError('required') && (registerForm.controls['mobileNumber'].touched || registerForm.controls['email'].dirty)">Please enter your mobile number</div>
               <div class="error" *ngIf="registerForm.controls['mobileNumber'].hasError('minLength()')">Please enter 10 digit number</div>
-              <ion-item>
+              <ion-item class="ion-no-padding">
                 <ion-label position="floating">Password</ion-label>
                 <ion-input type="password" formControlName="password"></ion-input>
               </ion-item>
               <div class="error" *ngIf="registerForm.controls['password'].hasError('required') && (registerForm.controls['password'].touched || registerForm.controls['email'].dirty)">Please enter your password</div>
               <div class="error" *ngIf="registerForm.controls['password'].hasError('minLength')">Password must contain minimum 6 character</div>
-              <ion-item>
+              <ion-item class="ion-no-padding">
                 <ion-label position="floating">Confirm Password</ion-label>
                 <ion-input type="password" formControlName="confirmPassword"></ion-input>
               </ion-item>
               <div class="error" *ngIf="registerForm.controls['confirmPassword'].hasError('required') && (registerForm.controls['confirmPassword'].touched || registerForm.controls['confirmPassword'].dirty)">Please confirm your password</div>
               <div class="error" *ngIf="registerForm.controls['confirmPassword'].hasError('MustMatch')">Password must match</div>
-              <ion-item>
+              <ion-item class="ion-no-padding">
                 <ion-checkbox slot="start" color="danger"></ion-checkbox>
                 <ion-label>I accept terms and conditions</ion-label>
               </ion-item>
