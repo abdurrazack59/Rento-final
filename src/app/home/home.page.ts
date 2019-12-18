@@ -15,8 +15,8 @@ declare var google: any;
 })
 export class HomePage implements OnInit {
   data: any = {};
-  userName = '';
-  mobileNumber = '';
+  userName = 'Username';
+  mobileNumber = '9876543210';
   userImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQCEzGoZ6NCvbjg4hJlLL_0TLB61J8R2Xi09hoiSpGxXvVdTRoB';
   latitude: any;
   longitude: any;

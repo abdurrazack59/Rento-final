@@ -11,8 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserPage implements OnInit {
   data: any = {};
-   userName = '';
-   mobileNumber = '';
+   userName = 'Username';
+   mobileNumber = '9876543210';
   constructor(private router: Router, private alertController: AlertController,
               private registerApiService: RegisterApiService, private authService: AuthService) { }
 
