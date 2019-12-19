@@ -10,7 +10,7 @@ const routes: Routes = [
   // },
    {
     path: '',
-    loadChildren: './login/login.module#LoginPageModule',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {

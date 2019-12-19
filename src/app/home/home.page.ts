@@ -13,7 +13,7 @@ declare var google: any;
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage implements OnInit, AfterViewInit {
   data: any = {};
   userName = 'Username';
   mobileNumber = '9876543210';
@@ -22,7 +22,7 @@ export class HomePage implements OnInit {
   longitude: any;
 
 
-  @ViewChild('mapElement', { static: false }) mapNativeElement: ElementRef;
+  @ViewChild('mapElement', { static: true }) mapNativeElement: ElementRef;
   directionsService = new google.maps.DirectionsService;
   directionsDisplay = new google.maps.DirectionsRenderer;
   directionForm: FormGroup;
@@ -52,12 +52,18 @@ export class HomePage implements OnInit {
   }
 
   ngAfterViewInit(): void {
+    const options = {
+      timeout: 25000,
+      enableHighAccuracy: true
+    };
     this.geolocation.getCurrentPosition().then((resp) => {
       this.latitude = resp.coords.latitude;
       this.longitude = resp.coords.longitude;
       const map = new google.maps.Map(this.mapNativeElement.nativeElement, {
         center: { lat: 12.979316, lng: 77.599773 },
-        zoom: 6
+        zoom: 14,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true,
       });
       this.directionsDisplay.setMap(map);
       /*location object*/

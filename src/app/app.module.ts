@@ -5,7 +5,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { GoogleMapsModule } from '@angular/google-maps';
+// import { GoogleMapsModule } from '@angular/google-maps';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +26,7 @@ import { PopupRidelaterPageModule } from './popup-ridelater/popup-ridelater.modu
     BrowserModule,
     IonicModule.forRoot(),
     ReactiveFormsModule,
-    GoogleMapsModule,
+    // GoogleMapsModule,
     FormsModule,
     PopupRidelaterPageModule,
     AppRoutingModule
